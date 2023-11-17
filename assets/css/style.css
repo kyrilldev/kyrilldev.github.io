@@ -148,6 +148,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 30px;
 }
 
+.less-rounding{
+  border-radius: 15px;
+}
+
 .div-background{
   background-color: #0d2138;
   background-size: cover;
@@ -164,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .grid-item {
-  background-color: #1b4472;
+  background-color: #143353;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
