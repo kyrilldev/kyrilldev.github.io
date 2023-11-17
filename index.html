@@ -32,8 +32,9 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0I5t9z6A9r5ans6ZHDi4z8VOaW4Jbe5it9z3VdMBBCXbgX5UzS+Z6R5unJA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0I5t9z6A9r5ans6ZHDi4z8VOaW4Jbe5it9z3VdMBBCXbgX5UzS+Z6R5unJA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -53,36 +54,30 @@
 
 <body>
 
+  
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
+    style="display:none;visibility:hidden"></iframe>
+  </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- ======= Header ======= -->
+    <header id="header" class="header-tops">
+    
+      <div class="container">
+        <h1><a href="index.html">Kyrill Oosterveen</a></h1>
+        <h2 style="color:#fff">I'm a <span class="typing" style="color:#7D5BA6"></span></h2>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="#header"> <span>Home</span></a></li>
+            <li><a href="#about"><span>About</span></a></li>
+            <li><a href="#Resume"> <span>Resume</span></a></li>
+            <li><a href="#portfolio"> <span>Projects</span></a></li>
 
-    <div class="container">
-      <h1><a href="index.html">Kyrill Oosterveen</a></h1>
-      <h2 style="color:#fff">I'm a <span class="typing" style="color:#7D5BA6"></span></h2>
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header"> <span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#Resume"> <span>Resume</span></a></li>
-          <li><a href="#portfolio"> <span>Projects</span></a></li>
-          <li><a href="#contacts"> <span>Contact</span></a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/kyrill-oosterveen-0b2809171/" target="_blank" class="linkedin"><i
-            class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/kyrilldev" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          </ul>
+        </nav><!-- .nav-menu -->
 
       </div>
-
-    </div>
-  </header><!-- End Header -->
+    </header><!-- End Header -->
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about">
@@ -103,7 +98,7 @@
                 I am studying Game Development at GLU.
                 My projects include 2D Games, 3D Games and some more projects of mine.
                 Being comfortable with code allows me to rapidly prototype and deliver products.
-                In my spare time I like playing Badminton, playing video games, and Video Editing.
+                In my spare time I like playing Badminton, playing video games and Video Editing.
                 I’m always down for hearing about new projects, so feel free to drop me a line.
               </p>
               <div class="row">
@@ -130,54 +125,51 @@
           </div>
 
           <div class="grid-container">
-            <div class="grid-item">
-              <div class="service-icon-box">
-                <img src="assets/img/Svg/gamepad-solid.svg" alt="" class="box-image" width="50">
-              </div>
-              <div class="box-content">
-                <h3 class="service-item-title">Unity Development</h3>
-                <p class="service-item-text">I make video games in Unity using C#. A lot of 3D games but also 2D games</p>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="service-icon-box">
-                <img src="assets/img/Svg/code-solid.svg" alt="" class="box-image" width="50">
-              </div>
-              <div class="box-content">
-                <h3 class="service-item-title">C# Programming</h3>
-                <p class="service-item-text">I also program non-gaming programs like databases and apps.</p>
+            <div class="grid-item contained-container">
+              <div class="icon-and-text-container">
+                  <div class="service-icon-box">
+                    <img src="assets/img/Svg/gamepad-solid.svg" alt="" class="box-image" width="50">
+                  </div>
+                  <div class="box-content">
+                    <h3 class="service-item-title">Unity Development</h3>
+                    <p class="service-item-text">I make video games in Unity using C#. A lot of 3D games but also 2D games</p>
+                  </div>
               </div>
             </div>
-            <div class="grid-item">
-              <div class="service-icon-box">
-                <img src="assets/img/Svg/sitemap-solid.svg" alt="" class="box-image" width="50">
+              <div class="grid-item contained-container">
+                <div class="icon-and-text-container">
+                  <div class="service-icon-box">
+                    <img src="assets/img/Svg/code-solid.svg" alt="" class="box-image" width="50">
+                  </div>
+                  <div class="box-content">
+                    <h3 class="service-item-title">C# Programming</h3>
+                    <p class="service-item-text">I also program non-gaming programs like databases and apps.</p>
+                  </div>
+                </div>
               </div>
-              <div class="box-content">
-                <h3 class="service-item-title">Game Design</h3>
-                <p class="service-item-text">When making games I focus a lot on game design because it's that what makes games fun at the end of the day.</p>
-              </div>
+              <div class="grid-item contained-container">
+                <div class="icon-and-text-container">
+                  <div class="service-icon-box">
+                    <img src="assets/img/Svg/sitemap-solid.svg" alt="" class="box-image" width="50">
+                  </div>
+                  <div class="box-content">
+                    <h3 class="service-item-title">Game Design</h3>
+                    <p class="service-item-text">When making games I focus a lot on game design because it's that what makes games fun at the end of the day.</p>
+                  </div>
+                </div>
             </div>
-            <div class="grid-item">
-              <div class="service-icon-box">
-                <img src="assets/img/Svg/video-solid.svg" alt="" class="box-image" width="50">
+              <div class="grid-item contained-container">
+                <div class="icon-and-text-container">
+                  <div class="service-icon-box">
+                    <img src="assets/img/Svg/video-solid.svg" alt="" class="box-image" width="50">
+                  </div>
+                  <div class="box-content">
+                    <h3 class="service-item-title">Video Editing Professionaly</h3>
+                    <p class="service-item-text">I edit video's using Adobe Premiere Pro for Youtubers. Check out my editing work <a href="https://ytjobs.co/talent/profile/23356?r=969" target="_blank">here</a></p>
+                  </div>
+                </div>
               </div>
-              <div class="box-content">
-                <h3 class="service-item-title">Unity Development</h3>
-                <p class="service-item-text">I make video games in Unity using C#</p>
-              </div>
-            </div>
           </div>
-      </div>
-    </div>
-
-    <div class="container contained-container">
-      <div class="div-background grid-container">
-        <div class="grid-item">
-          <!-- Contact info #1 -->
-        </div>
-        <div class="grid-item">
-          <!-- Contact info #2 -->
-        </div>
       </div>
     </div>
   </section><!-- End About Section -->
@@ -194,9 +186,13 @@
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
 
-          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100"
-            style="padding:0px 0px;padding-bottom: 5px;display: inline-block;" id="clickable">
-            <img src="assets/img/education/GLU.png" class="img-fluid" alt="">
+          <div class="col-md-4 mt-4 mt-md-0 icon-box scale-school-item" data-aos="fade-up" data-aos-delay="100"
+            style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+            <div>
+              <a href="https://www.glu.nl/" target="_blank">
+                <img src="assets/img/education/GLU.png" class="img-fluid" alt="">
+              </a>
+            </div>
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>MBO Game Development</em></p>
             <h5 style="text-align:left;padding: 0px 10px;">August 2021 - Present</h5>
             <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
@@ -208,7 +204,9 @@
           </div>
           <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100"
             style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-            <img src="assets/img/education/HP.jpg" class="img-fluid" alt="">
+            <a href="https://www.helenparkhurst.nl/">
+              <img src="assets/img/education/HP.jpg" class="img-fluid" alt="">
+            </a>
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>VMBO Technology</em></p>
             <h5 style="text-align:left;padding: 0px 10px;">August 2016 - July 2021</h5>
             <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
@@ -229,70 +227,45 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <h4 style="text-align:left;"><a href="https://www.asu.edu/" style="color:#7D5BA6">Arizona State
-                  University</a><br> </h4>
-              <h5 style="text-align:left;">January 2021 - Present</h5>
-              <p style="text-align:left;color:#fff"><em>Software Engineer </em></p>
+              <h4 style="text-align:left;"><a href="https://ytjobs.co/talent/profile/23356?r=969" target="_blank" style="color:#7D5BA6">Oosterveen Media</a><br> </h4>
+              <h5 style="text-align:left;">June 2021 - Present</h5>
+              <p style="text-align:left;color:#fff"><em>Freelance Video Editor</em></p>
               <ul style="text-align:left;">
-                <li>Managed large‑scale deployment of JupyterHub with Nbgrader and webwork software, facilitating approx
-                  5500 students.</li>
-                <li>Configured, troubleshot, and administered server‑side web applications for the statistics department.
+                <li>Passionate about bringing stories to life through the art of video editing! Over the past 2.5 years, I've had the privilege of collaborating with a couple YouTubers, adding that extra layer of visual magic to their content.</li>
+                <li>Proficient in Adobe Premiere Pro and Adobe After Effects. From smooth transitions to color grading, my editing skills are geared towards delivering a polished and professional final product.
                 </li>
-                <li>Handled Linux server administration and Apache configuration; automated tasks like user account
-                  creation, managing student database, and system maintenance using Shell and automation scripts, reducing
-                  manual work by 200%.</li>
+                <li>Time is of the essence, and I understand the importance of delivering high-quality content within deadlines. My efficient workflow ensures that projects are completed promptly without compromising on quality.</li>
               </ul>
             </div>
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#7D5BA6">Augmenify Infotech
-                  Pvt. Ltd.</a><br> </h4>
-              <h5 style="text-align:left;">August 2020 - November 2020</h5>
-              <p style="text-align:left;color:#fff"><em>Backend Developer</em></p>
+              <h4 style="text-align:left;"><a href="https://biz.dominos.com/" target="_blank" style="color:#7D5BA6">Domino's</a><br> </h4>
+              <h5 style="text-align:left;">July 2020 - November 2020</h5>
+              <p style="text-align:left;color:#fff"><em>Bicycle Delivery Person</em></p>
               <ul style="text-align:left;">
-                <li>Documented and coded server‑less web application for the hotel industry and designed REST API using
-                  Flask‑based JWT authentication.</li>
-                <li>Redeveloped an existing system to support customer account management, scheduling, and time tracking;
-                  enabled dynamic API calls with the help of Amazon API Gateway, AWS Lambda, and DynamoDB.</li>
+                <li>Key Responsibilities: Delivering Pizza, Delivering on time, Delivering the right products</li>
+                <li>In a fast-paced environment, teamwork is key. I collaborate with kitchen staff, fellow drivers, and store management to uphold Domino's standards. This collaborative spirit fosters a positive work culture, enhancing the overall efficiency of the team.</li>
               </ul>
             </div>
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <h4 style="text-align:left;"><a href="https://www.epitomesolutions.in/" style="color:#7D5BA6">Epitome
-                  Corporation Pvt. Ltd.</a><br> </h4>
-              <h5 style="text-align:left;">July 2019 - Dec 2019</h5>
-              <p style="text-align:left;color:#fff"><em>Software Developer</em></p>
+              <h4 style="text-align:left;"><a href="https://www.plus.nl/info-over-plus/organisatie" target="_blank" style="color:#7D5BA6">PLUS Retail</a><br> </h4>
+              <h5 style="text-align:left;">July 2019 - Okt 2019</h5>
+              <p style="text-align:left;color:#fff"><em>Filling Crew Member</em></p>
               <ul style="text-align:left;">
-                <li>Tested, designed, and developed backend APIs of WebRTC enabled multi‑party video conferencing web
-                  application and delivered the project 15 days ahead of schedule by efficiently designing the flow of the
-                  project.</li>
+                <li>I bring a methodical approach to arranging and restocking shelves. The well-organized shelves contribute to a visually appealing and easily navigable store layout.</li>
+                <li>Understanding the importance of a positive customer experience, I actively engage with shoppers. Whether it's helping locate specific items, providing product information, or offering assistance with inquiries, my customer-centric approach ensures that every shopper feels valued and supported.</li>
+
               </ul>
             </div>
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank"
-                  style="color:#7D5BA6">Meditab Software Pvt. Ltd.</a><br> </h4>
-              <h5 style="text-align:left;">May 2018 - June 2018</h5>
-              <p style="text-align:left;color:#fff"><em>Programmer Analyst</em></p>
+              <h4 style="text-align:left;"><a href="https://www.bees-sport.nl/" target="_blank"
+                  style="color:#7D5BA6">Bees-Sports</a><br> </h4>
+              <h5 style="text-align:left;">Okt 2017 - March 2019</h5>
+              <p style="text-align:left;color:#fff"><em>Technical Support</em></p>
               <ul style="text-align:left;">
-                <li>Optimized image processing algorithm of pill detection by creating customized MASKRCNN algorithm,
-                  increasing accuracy by 15%; trained classification algorithm with the help of triplet loss to learn the
-                  image embedding of pill, reducing the hassle of collecting data of new pills. </li>
-                <li>Devised a pipeline of the project to incorporate it into the product of the company. Implemented
-                  Restful APIs in Django that enabled our quality Analyst team to increase reporting speed by 46%.</li>
-                <li>Built a web app to onboard data from the company’s product using Flask, Postgres, and AWS S3, enabling
-                  interactive charts in real-time.</li>
-                <li>Mentored 2 interns to optimize the pill detection algorithm and to include the multiprocessing
-                  pipeline, increasing overall speed by 75%.</li>
-              </ul>
-            </div>
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <h4 style="text-align:left;"><a href="https://www.sac.gov.in/Vyom/index.jsp" target="_blank"
-                  style="color:#7D5BA6">Space Application Centre, ISRO</a><br> </h4>
-              <h5 style="text-align:left;">Jan 2018 - May 2018</h5>
-              <p style="text-align:left;color:#fff"><em>Research Intern</em></p>
-              <ul style="text-align:left;">
-                <li>Implemented noise reduction algorithm on the satellite image and prepared architecture for detecting
-                  objects in high‑resolution satellite images, achieving 80% accuracy.</li>
-                <li>Increased accessibility of satellite image data by redesigning database and application for showcasing
-                  graphical data.</li>
+                <li>Embarking on my professional journey at Bees-Sports as a Technical Support Specialist marked not only the beginning of my career but also the opportunity to make a meaningful impact within the organization. In this foundational role, I honed my technical skills while simultaneously providing valuable support to both internal operations and external customers.</li>
+                <li>One of the cornerstones of my role was ensuring the seamless functionality of printers. From diagnosing and resolving issues to conducting routine maintenance.</li>
+                <li>Undertaking small yet crucial tasks, such as sorting and organizing cables, showcased my commitment to maintaining a tidy and well-ordered work environment. </li>
+                <li>As the initial point of contact for technical inquiries, I provided timely and effective support to internal colleagues. This involved troubleshooting hardware and software issues, offering guidance on optimal usage, and ensuring a positive customer experience.</li>
               </ul>
             </div>
           </div>
@@ -336,7 +309,6 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-          <!-- <br> -->
           <center>
             <h4>They were left</h4>
           </center>
@@ -429,46 +401,6 @@
 
   <!-- End Project Section -->
 
-  <!-- Start Contact Section -->
-
-  <section id="contacts" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/rajaprerak" target="_blank" class="linkedin"><i
-                  class="bx bxl-linkedin"></i></a>
-              <a href="https://www.github.com/rajaprerak" target="_blank" class="github"><i
-                  class="bx bxl-github"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>rajaprerak@gmail.com</p>
-            <p>pkraja@asu.edu</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
-    </div>
-  </section>
-
-  <!-- End Contact Section -->
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -492,6 +424,16 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <div class="overlay">
+    <a href="https://www.linkedin.com/in/kyrill-oosterveen-0b2809171/" target="_blank" class="linkedin"><i
+      class="bx bxl-linkedin"></i><span>LinkedIn</span></a>
+    <a href="https://github.com/kyrilldev" target="_blank" class="github"><i class="bx bxl-github"></i><span>Github</span></a>
+    <div class="email-container">
+      <a href="mailto:kyrilloosterveenbva@gmail.com" class="logo-link logo">
+        <i class="icofont-email"></i><span>E-mail</span>
+      </a>
+    </div>
+  </div>
 </body>
 
 </html>

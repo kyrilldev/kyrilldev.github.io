@@ -148,8 +148,89 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 30px;
 }
 
+.slight-padding-above-15px{
+  padding-top: 15px;
+}
+
 .less-rounding{
   border-radius: 15px;
+}
+
+.overlay {
+  position: fixed;
+  bottom: 8px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.overlay a {
+  color: #fff; /* Adjust the color as needed */
+  font-size: 30px;
+  text-decoration: none;
+  text-align: center; /* Center the text under the icon */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.overlay a span {
+  /* Styles for the text under the icon */
+  margin-top: 5px; /* Adjust the margin as needed */
+  font-size: 12px;
+}
+
+.overlay a:hover {
+  color: #7D5BA6; /* Adjust the color as needed */
+  transform: scale(1.2); /* Zoom in by 20% on hover */
+}
+
+@media (max-width: 1432px) {
+  .overlay:not(#header-overlay) {
+    display: none;
+  }
+}
+
+.email-container {
+  position: relative;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 0px;
+}
+
+.logo {
+  width: 40px; /* Set the width of your logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Adjust spacing */
+}
+
+.logo-link:hover .email {
+  opacity: 1;
+}
+
+.reveal-button {
+  background: #0077b5;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.email {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  margin-left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .div-background{
@@ -164,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
   grid-gap: 20px; /* Space between the grid items */
-  padding: 20px; /* Padding around the grid */
+  padding: 10px; /* Padding around the grid */
 }
 
 .grid-item {
@@ -172,12 +253,25 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  word-wrap: break-word; 
   gap: 18px;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
   padding-bottom: 15px;
   border-radius: 25px;
+  overflow: hidden;
+}
+
+.icon-and-text-container {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .box-content {
@@ -204,6 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-icon-box{
   margin-bottom: 0;
   margin-top: 5px;
+  margin-right: 10px;
 }
 
 .service-item-title{
@@ -1102,7 +1197,7 @@ section .container {
   opacity: 1;
 }
 
-.contact .php-email-form input::-moz-placeholder, .contact .php-email-form textarea::-moz-placeholder {
+.contact .php-email-form input::-moz-placeholder, .contact .php-3-form textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.3);
   opacity: 1;
 }
