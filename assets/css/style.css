@@ -156,6 +156,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
 }
 
+.zoom-in {
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.zoom-in:hover {
+  transform: scale(1.05); /* Increase the scale on hover for a slight zoom effect */
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
