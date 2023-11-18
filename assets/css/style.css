@@ -189,6 +189,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.2); /* Zoom in by 20% on hover */
 }
 
+.linkedin-link {
+  display: inline-block; /* Ensures the anchor takes the size of the image */
+}
+
+.linkedin-link:hover{
+  color: #7D5BA6; /* Adjust the color as needed */
+  transform: scale(1.08); /* Zoom in by 20% on hover */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
 @media (max-width: 1432px) {
   .overlay:not(#header-overlay) {
     display: none;
@@ -276,6 +286,13 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
   grid-gap: 20px; /* Space between the grid items */
   padding: 10px; /* Padding around the grid */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 770px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+  }
 }
 
 .grid-item {
@@ -408,6 +425,12 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
+/* Media query to hide the 3 button on larger screens */
+@media (min-width: 993px) {
+  .contact-button {
+    display: none; /* Hide the contact button */
+  }
+}
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
