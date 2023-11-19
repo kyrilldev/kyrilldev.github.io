@@ -366,12 +366,94 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
+#gist-container {
+  display: none; /* Initially hide the Gist container */
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+#toggle-button {
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 15px;
+  outline: none;
+  transition: color 0.3s;
+}
+
+#toggle-button:hover {
+  color: #7D5BA6; /* Change color on hover */
+}
+
+.toggle-text {
+  margin-right: 0px; /* Adjust the margin as needed */
+}
+
+.toggle-icon {
+  transition: transform 0.3s;
+}
+
+.open .toggle-icon {
+  transform: rotate(90deg); /* Rotate the triangle when the Gist is open */
+}
+
 .zoom-in {
   transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
 .zoom-in:hover {
   transform: scale(1.05); /* Increase the scale on hover for a slight zoom effect */
+}
+
+.responsive-image {
+width: 100%; /* Set width to 100% of the container */
+max-width: 1200px; /* Optionally, set a maximum width */
+height: auto; /* Maintain aspect ratio */
+}
+
+            /* Media query for smaller screens (adjust as needed) */
+@media only screen and (max-width: 600px) {
+    .responsive-image {
+        max-width: 100%; /* Adjust maximum width for smaller screens */
+    }
+}
+
+/* Style the Gist container as needed */
+#gist-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gist-container {
+  display: none;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  color: #fff;
+}
+/* scrollbar */
+
+/* Apply styles to the container with scrollbar */
+.scroll-container {
+  height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #777 #f0f0f0; /* Firefox */
+}
+
+/* Apply styles to Webkit browsers (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
 }
 
 /*--------------------------------------------------------------
