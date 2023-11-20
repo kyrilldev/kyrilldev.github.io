@@ -392,7 +392,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-icon {
-  transition: transform 0.3s;
+  transform: rotate(90deg); /* Rotate the triangle when the Gist is open */
+  transition: transform 0.3s
 }
 
 .open .toggle-icon {

@@ -61,7 +61,7 @@
                 </button>
 
                 <!-- Container for the embedded Gist -->
-                <div id="gist-container-1" class="gist-container">
+                <div id="gist-container-1" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/carbontest2.png" class="responsive-image">
                     <!-- JavaScript to fetch and embed Gist content will be added here -->
                 </div>
@@ -74,7 +74,7 @@
                 </button>
 
                 <!-- Container for the embedded Gist -->
-                <div id="gist-container-2" class="gist-container">
+                <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/carbon.png" class="responsive-image">
                     <!-- JavaScript to fetch and embed Gist content will be added here -->
                 </div>
@@ -111,11 +111,11 @@
 
       <script>
         function toggleGist(containerId) {
-            const gistContainer = document.getElementById(containerId);
+          const gistContainer = document.getElementById(containerId);
             const toggleIcon = document.querySelector(`#${containerId} .toggle-icon`);
 
             gistContainer.style.display = gistContainer.style.display === 'none' ? 'block' : 'none';
-            toggleIcon.classList.toggle('open', gistContainer.style.display === 'block');
+            toggleIcon.classList.toggle('open');
         }
     </script>
 
