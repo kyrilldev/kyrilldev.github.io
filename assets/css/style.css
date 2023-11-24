@@ -208,6 +208,12 @@ h1, h2, h3, h4, h5, h6 {
 .image-container {
   position: relative;
   display: inline-block;
+  outline: 5px solid rgba(77, 77, 77, 0.6);
+  border-radius: 10px;
+}
+
+.image-container .a .img{
+  border-radius: inherit;
 }
 
 .overlay2 {
@@ -222,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .overlay2 i {
@@ -1112,7 +1119,7 @@ section .container {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  background: #1c7d32;
+  background: rgb(162, 31, 202);
 }
 
 .portfolio #portfolio-flters li:last-child {
