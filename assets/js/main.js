@@ -4,6 +4,18 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+function toggleGist(button) {
+  const gistContainer = document.getElementById(button.nextElementSibling.getAttribute('id'));
+  const toggleIcon = button.querySelector('.toggle-icon');
+
+  if (gistContainer && toggleIcon) {
+      gistContainer.style.display = gistContainer.style.display === 'none' ? 'block' : 'none';
+      toggleIcon.classList.toggle('open');
+  } else {
+      console.error('Gist container or toggle icon not found.');
+  }
+}
+
 !(function($) {
   "use strict";
 

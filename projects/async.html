@@ -25,6 +25,8 @@
         <!-- Template Main CSS File -->
         <link href="../assets/css/style.css" rel="stylesheet">
     
+        <link href="/assets/css/darkGist.css" rel="stylesheet">
+    
         <!-- =======================================================
         * Template Name: Personal - v2.2.0
         * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
@@ -39,25 +41,211 @@
       <main id="main">
         <div id="portfolio-details" class="portfolio-details">
           <div class="container">
-    
             <div class="row">
-    
               <div class="col-lg-12 portfolio-info">
-                <br>
-                <h2 style="color:#12d640">Tech Blog</h2>
+                <div class="slight-padding-above"></div>
+                <center><h2>Project Shortburn</h2></center>
+
+                <div class="slight-padding-above"></div>
     
+                <iframe 
+                  src="https://www.youtube.com/embed/nvDk_BgvlUQ?si=_V4DdGZFyppZK6p5&amp;controls=0&autoplay=1&mute=1"
+                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen width="1100px" height="619px">
+                </iframe>
+
+                <div class="slight-padding-above"></div>
+
                 <ul>
-                  <li><strong>Tech Stack</strong>: Flask, SQLAlchemy, Python, Heroku, Postgres, Bootstrap, HTML, CSS</li>
-                    <li><strong>Website URL</strong>: <a href="https://techingenious.herokuapp.com/" target="_blank">Link</a></li>
-                  <li><strong>Github URL</strong>: <a href="https://github.com/rajaprerak/Blog_with_flask" target="_blank">Project Link</a></li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                    <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/twinstick" target="_blank">Link</a></li><!-- replace with it's own -->
+                  <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/ShortBurnPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
-    
+                
+                <div class="slight-padding-above"></div>
+              
+                <div class="section-title">
+                  <h2>Code HighLights and Explanations</h2>
+                </div>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">Army Info Getter Function</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-1" class="gist-container" style="display: block;">
+                    <img src="/assets/img/codesnippets/async/DisplayInfoPhp.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      The <code>'DisplayInfo' </code> function is a PHP script designed for fetching and displaying user information from a MySQL database. Key aspects of the function include:
+                      <br>
+                      <li>
+                        <strong>Database Connection: </strong> Utilizes the <code>'connect.php' </code> file for establishing a connection to the MySQL database.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Prepared Statement: </strong> Prepares a SQL statement to select all fields from the <code>'users' </code> table where the token matches the provided request token.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Execution and Validation: </strong> Executes the prepared statement and checks if a matching row is found. If not, it returns a message indicating that the token was not found.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Data Retrieval: </strong> Data Retrieval: Retrieves various user-related data from the fetched row, including ID, gold, lumber, mana, and counts of different units (peasant, knight, archer, mage, catapult).
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Response Object: </strong> Response Object: Constructs a response object containing the retrieved data and a server message indicating that the information has been displayed.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>JSON Output:</strong> JSON Output: Encodes the response object into JSON format and echoes it back to the client.
+                      </li>
+                      <br>
+                      This PHP script showcases my proficiency in database interactions and handling user data within a server-side environment, demonstrating a key aspect of web development.
+                    </p>
+                </div>
+
+                <br>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">Login functionality</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-2" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/async/login.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      The Login function is a PHP script responsible for authenticating users based on their email and password against a MySQL database. 
+                      Key features of this function include:
+                      <br>
+                      <li>
+                        <strong>Database Connection: </strong> 
+                        Utilizes the <code>'connect.php'</code> file to establish a connection to the MySQL database.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Prepared Statement: </strong> 
+                        Prepares a SQL statement to select <code>'user</code> data from the users table where the provided email matches.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Execution and Validation: </strong> 
+                        Executes the prepared statement and checks if a matching row is found. If not, it returns a message indicating that the email was not found.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Password Verification: </strong> 
+                        Uses the <code>'password_verify'</code> function to compare the hashed password stored in the database with the provided password. If the verification fails, it returns a login failure message.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Token Generation and Update: </strong> 
+                        If login is successful, generates a random token using the <code>'GetRandomStringUniqid'</code> function and updates the user's token in the database.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>Response Object: </strong> 
+                        Constructs a response object containing the generated token and a success message.
+                      </li>
+                      <br>
+                      <li>
+                        <strong>JSON Output: </strong> 
+                        Encodes the response object into JSON format and echoes it back to the client.
+                      </li>
+                   </p>
+                </div>
+
+                <br>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">Find Opponent Function</span>
+                </button>
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-3" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/async/findoppentphp.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      This code snippet utilizes Unity's <code>'UnityWebRequest '</code> to perform a POST request to a specified URL with form data. Key
+                      aspects of this code include:
+                      <br>
+                      
+                      <li>
+                        <strong>Web Request Setup: </strong> Creates a <code>'UnityWebRequest '</code> object configured for a POST request with the specified URL <code>('url')</code> and form data <code>('formData')</code> .
+                      </li>
+                      <li>
+                        <strong>Asynchronous Request: </strong> Utilizes the <code>'yield return webRequest.SendWebRequest()'</code> construct for asynchronous execution, allowing the game to continue processing while waiting for the web request to complete.
+                      </li>
+                      <li>
+                        <strong>Response Handling: </strong> Logs the downloaded text from the web request and deserializes it into a <code>'FindNewOpponentResponse'</code> object using <code>'JsonUtility.FromJson'</code>  . The server response message is also logged for debugging purposes.
+                      </li>
+                      <li>
+                        <strong>UI Update on Successful Response: </strong> If the server message indicates finding a new opponent, updates various UI elements with information received from the server, such as the opponent's name, resources (gold, lumber, mana), and troop amounts (peasant, knight, archer, mage, catapult)
+                      </li>
+                      <li>
+                        <strong>Data Storage: </strong> Stores the latest opponent ID for future reference.
+                      </li>
+                    </p>
+                </div>
+
+                <br>
+                                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                    <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                    <span class="toggle-text">Update Request Classes</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-4" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/async/updateReqClass.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      The ResourceUpdateRequest class is a C# representation of a JSON request payload for updating resource information in a multiplayer game. Key attributes and features include:
+                      <br>
+                      <li>
+                        <strong>Serialization Attribute: </strong> The [System.Serializable] attribute indicates that instances of this class can be converted to and from JSON format, facilitating communication between the client and server.
+                      </li>
+                      <li>
+                        <strong>Action Identifier: </strong> Contains a string attribute action initialized to "Resource_Display," signifying the purpose of the request is to display resource information.
+                      </li>
+                      <li>
+                        <strong>Token Attribute: </strong> Represents the user's authentication token required for server validation.
+                      </li>
+
+                      <br>
+                      The ResourceUpdateResponse class is a C# representation of a JSON response payload for resource updates in a multiplayer game. Key attributes and features include:
+                      <br>
+                      <li>
+                        <strong>Server Message Attribute: </strong> Contains a string attribute serverMessage that conveys information about the success or failure of the resource update operation.
+                      </li>
+                      <li>
+                        <strong>Resource Attributes: </strong> Includes integer attributes (gold, lumber, mana, peasant, knight, archer, mage, catapult) representing the updated quantities of various in-game resources.
+                      </li>
+                    </p>
+                </div>
+
+                <div class="slight-padding-above"></div>
+                
+                <div class="section-title">
+                  <h2>The Assignment</h2>
+                </div>
+
                 <p>
-                   The blog is created using flask as backend. I have used bootstrap for the frontend part. For storing the data, I have made use of MySQL database. I have used the python SQL toolkit SQLAlchemy for performing database access.
+                  This project was a special solo project because we as students were introduced to php and databases. We used Unitys build in JSON functionality and we used an Application called "DevServer 17". The requirements of this were quite hard: we had to create a login / create account screen at the start of the game with the php functionality in the background. We had to have a goal in the game to interact with other "players". And we had to do this all in 6 weeks. The first couple of weeks was a lot of struggling and learing to use php together with Unity. And the last 3-4 weeks were weeks of pure development and working late nights. 
                 </p>
-                  <p>
-                    The blog consist of features like viewing posts. Admin can add new post, edit posts and delete posts. User can contact admin via the contact page.
-                </p>
+
+                <div class="slight-padding-above"></div>
+                <!-- <a href="" target="_blank">
+                  <iframe src="https://itch.io/embed/2335650" width="552" height="167" frameborder="0"><a href="https://kyrilldev.itch.io/twinstick" >Twinstick by kyrilldev</a></iframe>
+                </a> -->
               </div>
     
             </div>
@@ -81,6 +269,6 @@
       <script src="../assets/js/main.js"></script>
     
       <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
-    
+
     </body>
 </html>

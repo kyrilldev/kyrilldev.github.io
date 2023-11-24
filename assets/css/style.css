@@ -310,6 +310,29 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.skill-item {
+  text-align: center;
+  margin-right: 20px; /* Adjust the space between logos as needed */
+}
+
+.skill-logo {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-bottom: 5px; /* Adjust the space between logo and caption as needed */
+}
+
+.skill-caption {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+}
+
 .icon-and-text-container {
   display: flex;
 }
@@ -392,12 +415,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-icon {
-  transform: rotate(90deg); /* Rotate the triangle when the Gist is open */
-  transition: transform 0.3s
+  transition: transform 0.3s;
 }
 
 .open .toggle-icon {
-  transform: rotate(90deg); /* Rotate the triangle when the Gist is open */
+  transform: rotate(90deg);
 }
 
 .zoom-in {

@@ -25,6 +25,8 @@
         <!-- Template Main CSS File -->
         <link href="../assets/css/style.css" rel="stylesheet">
     
+        <link href="/assets/css/darkGist.css" rel="stylesheet">
+    
         <!-- =======================================================
         * Template Name: Personal - v2.2.0
         * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
@@ -39,25 +41,193 @@
       <main id="main">
         <div id="portfolio-details" class="portfolio-details">
           <div class="container">
-    
             <div class="row">
-    
               <div class="col-lg-12 portfolio-info">
-                <br>
-                <h2 style="color:#12d640">Tech Blog</h2>
+                <div class="slight-padding-above"></div>
+                <center><h2>Project Shortburn</h2></center>
+
+                <div class="slight-padding-above"></div>
     
+                <iframe 
+                  src="https://www.youtube.com/embed/nvDk_BgvlUQ?si=_V4DdGZFyppZK6p5&amp;controls=0&autoplay=1&mute=1"
+                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen width="1100px" height="619px">
+                </iframe>
+
+                <div class="slight-padding-above"></div>
+
                 <ul>
-                  <li><strong>Tech Stack</strong>: Flask, SQLAlchemy, Python, Heroku, Postgres, Bootstrap, HTML, CSS</li>
-                    <li><strong>Website URL</strong>: <a href="https://techingenious.herokuapp.com/" target="_blank">Link</a></li>
-                  <li><strong>Github URL</strong>: <a href="https://github.com/rajaprerak/Blog_with_flask" target="_blank">Project Link</a></li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                    <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/twinstick" target="_blank">Link</a></li><!-- replace with it's own -->
+                  <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/ShortBurnPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
-    
+                
+                <div class="slight-padding-above"></div>
+              
+                <div class="section-title">
+                  <h2>Code HighLights and Explanations</h2>
+                </div>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">ShieldPuzzleChecker.cs</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-1" class="gist-container" style="display: block;">
+                    <img src="/assets/img/codesnippets/theywereleft/ShieldPuzzleChecker.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      This script checks if the game can spawn puzzle pieces (<code>'_canSpawn' </code>is false) and if the first puzzle piece in the array (<code>'puzzlePieces[0]' </code>) 
+                      is not null. If these conditions are met, it uses <code>'Physics.OverlapSphere' </code>to find colliders within a specified radius around the first puzzle piece's position, 
+                      using a specified layer mask. The colliders list is then cleared.
+                    </p>
+                    <p>
+                      It checks if the number of colliders in the colliders list is equal to a specified piece count (<code>'_pieceCount'</code>) and if the number of puzzle pieces on the outline is 
+                      equal to or greater than 4 (<code>'puzzlePieceCount >= 4'</code>). If both conditions are met, it starts a coroutine (<code>'DestroyPuzzlePieces >= 4'</code>) to destroy the puzzle pieces.
+                    </p>
+                </div>
+
+                <br>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">Assignwaypointeditortool.cs</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-2" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/theywereleft/Assignwaypointeditortool.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      In this snippet, I've crafted a function named <code>('AssignWaypoints')</code> designed for a Unity Cinemachine implementation. <br>
+                      This function dynamically assigns positions to a Cinemachine Smooth Path based on the provided waypoints. 
+                      It also toggles between multiple virtual cameras, enabling the camera associated with the specified level index. <br>
+                      The code not only sets the waypoints for smooth path traversal but also configures the camera to follow and look at a specific target, 
+                      enhancing the cinematic experience within the game. <br>This snippet showcases my ability to manage camera systems and create dynamic, 
+                      immersive experiences in Unity game development.
+                    </p>
+                </div>
+
+                <br>
+
+                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-text">CameraPlayback.cs</span>
+                </button>
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-3" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/theywereleft/CameraPlayback.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      In this coroutine, aptly named <code>'PathPosLerp'</code>, I implement smooth interpolation of a Cinemachine Virtual Camera along a tracked dolly path in Unity. 
+                      This function takes parameters such as the virtual camera <code>('vcam')</code>, the duration of the interpolation <code>('sec')</code>, and the level index <code>('l_levelIndex')</code>. <br>
+                      During the interpolation, the camera smoothly moves from the starting position to the end position. 
+                      The code also includes functionality to disable player control during cutscenes by updating a flag in the GameManager.<br>
+                      Finally, the associated virtual camera is disabled upon completion, showcasing my proficiency in creating seamless transitions and enhancing player experiences in Unity game development.
+                    </p>
+                </div>
+
+                <br>
+                                <!-- Toggle button -->
+                <button id="toggle-button" onclick="toggleGist(this)">
+                    <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                    <span class="toggle-text">EditorTool.cs</span>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-4" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/theywereleft/EditorTool.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      This function, <code>'OnGUI'</code>, defines a custom Unity editor window for convenient configuration of waypoints in the scene. The window provides an intuitive interface for managing waypoints within the game environment. Key features include:
+
+                      <li>
+                        Information Label: Describes the purpose of the window, emphasizing its role in configuring waypoints.
+                      </li>
+                      <br>
+                      <li>
+                        Camera Manager Setup: Allows for the selection of a <code>'CameraManager'</code> object through a field. This manager is then located in the scene for further use.
+                      </li>
+                      <br>
+                      <li>
+                        Waypoint Configuration: Provides toggles for individual cells, allowing quick and visual configuration of different waypoints in the scene.
+                      </li>
+                      <br>
+                      <li>
+                        Spawn Empties Button: Triggers the spawning of entities (empties) based on the configured waypoints. Once spawned, the button sets the level position to zero.
+                      </li>
+                      <br>
+                      <li>
+                        Reset Waypoint Positions Button: Initiates a confirmation dialogue before resetting all waypoint positions. Upon confirmation, it resets the positions of associated GameObjects.
+                      </li>
+                      <br>
+                        This script showcases my ability to create custom Unity editor windows, streamlining the configuration process for waypoints in game development.
+                    </p>
+                </div>
+
+                <div class="slight-padding-above"></div>
+                
+                <div class="section-title">
+                  <h2>The Assignment</h2>
+                </div>
+
                 <p>
-                   The blog is created using flask as backend. I have used bootstrap for the frontend part. For storing the data, I have made use of MySQL database. I have used the python SQL toolkit SQLAlchemy for performing database access.
+                   In the making of this game we were supposed to think of 3 puzzles and we had to combine the 3 puzzle into a smooth flowing game. <br>
+                   The name of the assignment was "Shortburn", we worked together in groups of 5-6 people. 
+                   In my case there were 3 developers and 3 artists. <br>
+                   In the first puzzle as you can see in the video you need to find all the puzzle pieces in the room and stick them on a board to spawn the whole shield. 
+                   The second room you had to switch pov's to the second smaller player and go through a hole in the wall and through a bunch of parkour you have to make your way to a ball 
+                   and drop it on a lever that opened the third room. <br>In the third room you had to complete a Indiana Jones inspired tile puzzle. 
+                   <br>You could reveal the correct path by throwing rocks on the tiles. When you finished this puzzle you could go to the end door and finish the game.
                 </p>
-                  <p>
-                    The blog consist of features like viewing posts. Admin can add new post, edit posts and delete posts. User can contact admin via the contact page.
-                </p>
+
+                <div class="slight-padding-above"></div>
+
+                <div class="section-title">
+                  <h2>My part of the project</h2>
+                </div>
+
+                <li>
+                  The whole Main Menu
+                </li>
+
+                <li>
+                  Dev Tool
+                </li>
+
+                <li>
+                  Cutscene Manager
+                </li>
+
+                <li>
+                  The whole Main Menu
+                </li>
+
+                <li>
+                  The playercontroller
+                </li>
+
+                <li>
+                  The door functionality
+                </li>
+
+                <li>
+                  The GameManager
+                </li>
+
+                <li>
+                  The first and second puzzle
+                </li>
+
+                <div class="slight-padding-above"></div>
+
+                <!-- <a href="" target="_blank">
+                  <iframe src="https://itch.io/embed/2335650" width="552" height="167" frameborder="0"><a href="https://kyrilldev.itch.io/twinstick" >Twinstick by kyrilldev</a></iframe>
+                </a> -->
               </div>
     
             </div>
@@ -81,6 +251,6 @@
       <script src="../assets/js/main.js"></script>
     
       <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
-    
+
     </body>
 </html>
