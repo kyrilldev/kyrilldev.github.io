@@ -44,7 +44,7 @@
             <div class="row">
               <div class="col-lg-12 portfolio-info">
                 <div class="slight-padding-above"></div>
-                <center><h2>ProjectTwinstick</h2></center>
+                <center><h2>Project Twinstick</h2></center>
 
                 <div class="slight-padding-above"></div>
     
@@ -68,106 +68,99 @@
                   <h2>Code HighLights and Explanations</h2>
                 </div>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
+                  <span class="toggle-icon">&#9654;</span>
                   <span class="toggle-text">ShieldPuzzleChecker.cs</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-1" class="gist-container" style="display: block;">
-                    <img src="/assets/img/codesnippets/theywereleft/ShieldPuzzleChecker.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/twinstick/EnemyAttackPlayer.png" class="responsive-image">
                     <p>
-                      This script checks if the game can spawn puzzle pieces (<code>'_canSpawn' </code>is false) and if the first puzzle piece in the array (<code>'puzzlePieces[0]' </code>) 
-                      is not null. If these conditions are met, it uses <code>'Physics.OverlapSphere' </code>to find colliders within a specified radius around the first puzzle piece's position, 
-                      using a specified layer mask. The colliders list is then cleared.
-                    </p>
-                    <p>
-                      It checks if the number of colliders in the colliders list is equal to a specified piece count (<code>'_pieceCount'</code>) and if the number of puzzle pieces on the outline is 
-                      equal to or greater than 4 (<code>'puzzlePieceCount >= 4'</code>). If both conditions are met, it starts a coroutine (<code>'DestroyPuzzlePieces >= 4'</code>) to destroy the puzzle pieces.
+                      The AttackPlayer function is a method within a game script, likely written in Unity with C#. It handles the logic for an enemy character to attack a player. Key features of this function include:
+
+                      Navigation Reset: Uses Unity's NavMeshAgent to set the destination to the enemy's current position, effectively pausing its movement.
+
+                      Rotation towards Player: Utilizes transform.LookAt(player) to make the enemy character face the player.
+
+                      Projectile Instantiation: Instantiates a projectile (projectile) at the enemy's position using Instantiate, providing it with an initial velocity in the forward direction.
+
+                      Projectile Movement: Translates the enemy character in the forward direction at a specified speed (projectileSpeed * Time.deltaTime), simulating the projectile launch.
+
+                      Attack Cooldown: Implements a cooldown mechanism (timeBetweenAttacks) to prevent the enemy from attacking continuously. The Invoke function is used to schedule the ResetAttack method after a specified delay.
+
+                      Attack Reset: The ResetAttack method resets the alreadyAttacked flag, allowing the enemy to attack again after the cooldown period.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">Assignwaypointeditortool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">SetNextTarget function</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/Assignwaypointeditortool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/twinstick/EnemyNextTarget.png" class="responsive-image">
                     <p>
-                      In this snippet, I've crafted a function named <code>('AssignWaypoints')</code> designed for a Unity Cinemachine implementation. <br>
-                      This function dynamically assigns positions to a Cinemachine Smooth Path based on the provided waypoints. 
-                      It also toggles between multiple virtual cameras, enabling the camera associated with the specified level index. <br>
-                      The code not only sets the waypoints for smooth path traversal but also configures the camera to follow and look at a specific target, 
-                      enhancing the cinematic experience within the game. <br>This snippet showcases my ability to manage camera systems and create dynamic, 
-                      immersive experiences in Unity game development.
+                      The SetNextTarget function is a method within a game script, likely written in Unity with C#. It manages the navigation system for an agent, determining its next target waypoint. Key features of this function include:
+
+                      Previous Index Tracking: Stores the current index as prevIndex to keep track of the agent's previous waypoint.
+                      
+                      Conditional Random Movement: If _MoveRandom is enabled, randomly selects a waypoint index from the list (_Waypoints). If the new index matches the previous one, increments it to ensure a change in destination.
+                      
+                      Sequential Movement: If _MoveRandom is not enabled, increments the current index in a sequential manner, ensuring the agent moves through waypoints in order.
+                      
+                      Index Wraparound: Handles index wraparound by using modulo (_currentIndex %= _Waypoints.Count), ensuring the agent cycles through waypoints seamlessly.
+                      
+                      Navigation Destination: Sets the agent's destination to the position of the waypoint corresponding to the calculated index using SetDestination.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">CameraPlayback.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Patrolling function</span>
                 </button>
-                <!-- Container for the embedded Gist -->
+
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/CameraPlayback.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/twinstick/EnemyPatrolling.png" class="responsive-image">
                     <p>
-                      In this coroutine, aptly named <code>'PathPosLerp'</code>, I implement smooth interpolation of a Cinemachine Virtual Camera along a tracked dolly path in Unity. 
-                      This function takes parameters such as the virtual camera <code>('vcam')</code>, the duration of the interpolation <code>('sec')</code>, and the level index <code>('l_levelIndex')</code>. <br>
-                      During the interpolation, the camera smoothly moves from the starting position to the end position. 
-                      The code also includes functionality to disable player control during cutscenes by updating a flag in the GameManager.<br>
-                      Finally, the associated virtual camera is disabled upon completion, showcasing my proficiency in creating seamless transitions and enhancing player experiences in Unity game development.
+                      The Patrolling function is a method within a game script, likely written in Unity with C#. It governs the patrolling behavior of an agent, ensuring it moves between designated walk points. Key features of this function include:
+
+                      Walk Point Initialization: Checks if a walk point has been set (!walkPointSet). If not, it calls SearchWalkPoint() to find a suitable location within the patrol area.
+                      
+                      Destination Setting: If a walk point is set, uses agent.SetDestination(walkPoint) to guide the agent towards the designated walk point.
+                      
+                      Distance Check: Calculates the distance between the agent's current position and the walk point using Vector3 distanceToWaypoint = transform.position - walkPoint;.
+                      
+                      Walk Point Reset: If the agent is close enough to the walk point (distanceToWaypoint.magnitude < 1f), it marks walkPointSet as false, indicating that the agent has reached its destination and is ready to search for a new walk point.
                     </p>
                 </div>
 
                 <br>
-                                <!-- Toggle button -->
+
                 <button id="toggle-button" onclick="toggleGist(this)">
-                    <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                    <span class="toggle-text">EditorTool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Gun Controller functionality</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-4" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/EditorTool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/twinstick/gunControlling.png" class="responsive-image">
                     <p>
-                      This function, <code>'OnGUI'</code>, defines a custom Unity editor window for convenient configuration of waypoints in the scene. The window provides an intuitive interface for managing waypoints within the game environment. Key features include:
+                      The Update function represents a crucial part of a game script, likely written in Unity with C#. It governs the behavior of a weapon system, managing ammunition, reloading, and firing. Key features of this function include:
 
-                      <li>
-                        Information Label: Describes the purpose of the window, emphasizing its role in configuring waypoints.
-                      </li>
-                      <br>
-                      <li>
-                        Camera Manager Setup: Allows for the selection of a <code>'CameraManager'</code> object through a field. This manager is then located in the scene for further use.
-                      </li>
-                      <br>
-                      <li>
-                        Waypoint Configuration: Provides toggles for individual cells, allowing quick and visual configuration of different waypoints in the scene.
-                      </li>
-                      <br>
-                      <li>
-                        Spawn Empties Button: Triggers the spawning of entities (empties) based on the configured waypoints. Once spawned, the button sets the level position to zero.
-                      </li>
-                      <br>
-                      <li>
-                        Reset Waypoint Positions Button: Initiates a confirmation dialogue before resetting all waypoint positions. Upon confirmation, it resets the positions of associated GameObjects.
-                      </li>
-                      <br>
-                        This script showcases my ability to create custom Unity editor windows, streamlining the configuration process for waypoints in game development.
+                      Ammo Pickup Handling: Checks if the player has picked up ammo (AmmoPickUp.hasPickedUpAmmo). If true, increases the current ammo count by the specified value (ammoValue) and resets the pickup flag.
+                      
+                      Ammo Limitation: Ensures that the current ammo does not exceed the defined maximum ammo (maxAmmo).
+                      
+                      Reloading Logic: If the player is not already in the process of reloading (isReloading is false) and the current ammo is depleted, triggers the Reload coroutine.
+                      
+                      Fire Input Handling: Listens for input (e.g., left mouse button) and a cooldown mechanism (Time.time >= nextTimeToFiring). If conditions are met, initiates the Shoot method and sets the next time to fire based on the defined fire rate.
                     </p>
                 </div>
+
+                <br>
 
                 <div class="slight-padding-above"></div>
                 
@@ -176,13 +169,7 @@
                 </div>
 
                 <p>
-                   In the making of this game we were supposed to think of 3 puzzles and we had to combine the 3 puzzle into a smooth flowing game. <br>
-                   The name of the assignment was "Shortburn", we worked together in groups of 5-6 people. 
-                   In my case there were 3 developers and 3 artists. <br>
-                   In the first puzzle as you can see in the video you need to find all the puzzle pieces in the room and stick them on a board to spawn the whole shield. 
-                   The second room you had to switch pov's to the second smaller player and go through a hole in the wall and through a bunch of parkour you have to make your way to a ball 
-                   and drop it on a lever that opened the third room. <br>In the third room you had to complete a Indiana Jones inspired tile puzzle. 
-                   <br>You could reveal the correct path by throwing rocks on the tiles. When you finished this puzzle you could go to the end door and finish the game.
+                  For this project we had 6 sprint AKA 6 weeks of development time. We started the project with a couple of bulletpoints given to us by the teachers that we had to follow. Like for a example a map-layout, map theme and game theme. In this project I collaborated with 3 artists and one other developer. We managed to deliver what I think is a pretty decent game having used Unity for only 6 months till that point. The goal of the game is to collect all the keycards spread throughout the level and elimate all the enemies scattered through the map without dying.
                 </p>
 
                 <div class="slight-padding-above"></div>

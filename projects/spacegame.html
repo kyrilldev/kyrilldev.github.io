@@ -68,106 +68,132 @@
                   <h2>Code HighLights and Explanations</h2>
                 </div>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">ShieldPuzzleChecker.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Camera Tilt Logic for Player Movement</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-1" class="gist-container" style="display: block;">
-                    <img src="/assets/img/codesnippets/theywereleft/ShieldPuzzleChecker.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      This script checks if the game can spawn puzzle pieces (<code>'_canSpawn' </code>is false) and if the first puzzle piece in the array (<code>'puzzlePieces[0]' </code>) 
-                      is not null. If these conditions are met, it uses <code>'Physics.OverlapSphere' </code>to find colliders within a specified radius around the first puzzle piece's position, 
-                      using a specified layer mask. The colliders list is then cleared.
-                    </p>
-                    <p>
-                      It checks if the number of colliders in the colliders list is equal to a specified piece count (<code>'_pieceCount'</code>) and if the number of puzzle pieces on the outline is 
-                      equal to or greater than 4 (<code>'puzzlePieceCount >= 4'</code>). If both conditions are met, it starts a coroutine (<code>'DestroyPuzzlePieces >= 4'</code>) to destroy the puzzle pieces.
+                      The TiltCamera method is a part of a Unity game script, likely written in C#. It manages the tilting behavior of the in-game camera in response to player movement. Key features of this code include:
+
+                      Crouch Check: Ensures that the camera doesn't tilt when the player is crouching, maintaining stability during crouched movement.
+                      
+                      Dynamic Tilt Calculation: Utilizes player input (playerManager.playerMovement.x) to calculate the desired tilt angle (tilt). The tilt is determined based on whether the player is moving left, right, or not moving at all.
+                      
+                      Cross-Platform Input Handling: Implements a switch statement with comparison operators (<, >) instead of explicit values (== 1 or == -1) to accommodate various input methods, ensuring cross-platform compatibility.
+                      
+                      Tilt Smoothness: Applies a smoothing effect to the calculated tilt using Mathf.Lerp to gradually adjust the targetMoveTilt. The tilt is influenced by the player's vertical movement (playerManager.playerMovement.y), resulting in a different tilt when moving forward or backward.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">Assignwaypointeditortool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Player Firing Mechanism</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/Assignwaypointeditortool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      In this snippet, I've crafted a function named <code>('AssignWaypoints')</code> designed for a Unity Cinemachine implementation. <br>
-                      This function dynamically assigns positions to a Cinemachine Smooth Path based on the provided waypoints. 
-                      It also toggles between multiple virtual cameras, enabling the camera associated with the specified level index. <br>
-                      The code not only sets the waypoints for smooth path traversal but also configures the camera to follow and look at a specific target, 
-                      enhancing the cinematic experience within the game. <br>This snippet showcases my ability to manage camera systems and create dynamic, 
-                      immersive experiences in Unity game development.
+                      The Fire method is a part of a Unity game script, likely written in C#. It manages the player's firing action, handling the instantiation and initialization of bullets. Key features of this code include:
+
+                      Input Action Callback: Responds to the firing action callback provided by the InputAction.CallbackContext parameter. This ensures that the firing logic is triggered only when the firing action starts (cxt.started).
+                      
+                      Base Rotation and Position: Captures the initial rotation (baseRotation) and position (basePosition) of the Shootpoint, which is likely the point from which bullets are fired.
+                      
+                      Object Pooling: Utilizes an object pool (Pool.GetPooledObject) to efficiently retrieve a bullet object from the pool, considering the initial rotation and position.
+                      
+                      Bullet Component Addition: Dynamically adds a Bullet component to the instantiated bullet object if it doesn't already have one. This ensures consistent behavior and properties for all bullets.
+                      
+                      Bullet Direction Calculation: Determines the shooting direction (shootDir) based on the vector pointing from the player's position to the Shootpoint. This normalized direction provides the initial trajectory of the fired bullet.
+                      
+                      Bullet Initialization: Calls the Init method on the Bullet component of the instantiated object, passing the calculated shooting direction to initialize the bullet's behavior.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">CameraPlayback.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Player Headbobbing Effect</span>
                 </button>
-                <!-- Container for the embedded Gist -->
+
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/CameraPlayback.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      In this coroutine, aptly named <code>'PathPosLerp'</code>, I implement smooth interpolation of a Cinemachine Virtual Camera along a tracked dolly path in Unity. 
-                      This function takes parameters such as the virtual camera <code>('vcam')</code>, the duration of the interpolation <code>('sec')</code>, and the level index <code>('l_levelIndex')</code>. <br>
-                      During the interpolation, the camera smoothly moves from the starting position to the end position. 
-                      The code also includes functionality to disable player control during cutscenes by updating a flag in the GameManager.<br>
-                      Finally, the associated virtual camera is disabled upon completion, showcasing my proficiency in creating seamless transitions and enhancing player experiences in Unity game development.
+                      The Headbob method is a component of a Unity game script, likely written in C#. It orchestrates a dynamic headbobbing effect for the player's camera, enhancing realism and immersion. Key features of this code include:
+
+                      Reduce Motion Handling: Checks if the player has opted to reduce motion effects, resetting relevant vectors to zero and bypassing the headbobbing calculations if enabled. This accommodates players who may prefer a motion-reduced experience.
+                      
+                      Fall-induced Bobbing: Triggers a brief bobbing effect when the player falls and then lands, adding a subtle visual cue to the impact. This utilizes the BobOnce method.
+                      
+                      Crouch and Sprint Bobbing: Adjusts the headbobbing frequency based on whether the player is crouching and sprinting simultaneously, enhancing the effect during specific movement conditions.
+                      
+                      Frequency Adjustment: Calls the desiredFreq method to dynamically adjust the headbobbing frequency based on movement conditions. The frequency adjustment is performed smoothly using Vector3.Lerp.
+                      
+                      Land Bobbing Offset: Utilizes lerping to gradually reduce the landBobOffset vector, contributing to a smoother transition between headbobbing states.
+                      
+                      Motion Check: Calls the CheckMotion method, likely responsible for managing the overall motion effects.
                     </p>
                 </div>
 
                 <br>
-                                <!-- Toggle button -->
+
                 <button id="toggle-button" onclick="toggleGist(this)">
-                    <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                    <span class="toggle-text">EditorTool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Dynamic Object Pool Expansion</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-4" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/EditorTool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      This function, <code>'OnGUI'</code>, defines a custom Unity editor window for convenient configuration of waypoints in the scene. The window provides an intuitive interface for managing waypoints within the game environment. Key features include:
+                      The Expand method is a key component of a Unity game script, likely written in C#. It dynamically expands an object pool by instantiating and initializing a specified number of objects. Key features of this code include:
 
-                      <li>
-                        Information Label: Describes the purpose of the window, emphasizing its role in configuring waypoints.
-                      </li>
-                      <br>
-                      <li>
-                        Camera Manager Setup: Allows for the selection of a <code>'CameraManager'</code> object through a field. This manager is then located in the scene for further use.
-                      </li>
-                      <br>
-                      <li>
-                        Waypoint Configuration: Provides toggles for individual cells, allowing quick and visual configuration of different waypoints in the scene.
-                      </li>
-                      <br>
-                      <li>
-                        Spawn Empties Button: Triggers the spawning of entities (empties) based on the configured waypoints. Once spawned, the button sets the level position to zero.
-                      </li>
-                      <br>
-                      <li>
-                        Reset Waypoint Positions Button: Initiates a confirmation dialogue before resetting all waypoint positions. Upon confirmation, it resets the positions of associated GameObjects.
-                      </li>
-                      <br>
-                        This script showcases my ability to create custom Unity editor windows, streamlining the configuration process for waypoints in game development.
+                      Looped Instantiation: Utilizes a for loop to instantiate a set number of objects (l_ExpandSize) based on the provided parameter.
+                      
+                      Object Instantiation: Instantiates a new object (newObject) of the type specified by the PooledObject template.
+                      
+                      Component Retrieval: Retrieves the PoolItem and Subject components from the instantiated object, allowing for subsequent customization and management.
+                      
+                      Initialization: Sets the PoolProperty of the PoolItem to link it to the current object pool. Additionally, adds the instantiated object as a subject to the player's health system (playerHealth._subjects).
+                      
+                      Global Subjects Assignment: Iterates through an array of enemy health systems (enemyHealth) and adds the instantiated object as a subject to each enemy health system.
+                      
+                      Object Return to Pool: Calls the ReturnPooledObject method, likely responsible for returning the instantiated object to the object pool for reuse.
                     </p>
                 </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Object Pooling Control Methods</span>
+                </button>
+
+                <div id="gist-container-5" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
+                    <p>
+                      The following methods are crucial components of an object pooling system in a Unity game script, likely written in C#:
+
+                      Activate:
+                      
+                      Purpose: Resets the death timer to zero, effectively reactivating an object.
+                      Description: The Activate method is responsible for resetting the DeathTimer variable to zero, indicating that the object is being reactivated. This method is often called when an object is retrieved from the pool for reuse.
+                      ReturnToPool:
+                      
+                      Purpose: Deactivates the object, returning it to the object pool for potential reuse.
+                      Description: The ReturnToPool method serves as a centralized control point for deactivating an object and returning it to the object pool (MyPool). It calls the DeActivate method to perform necessary deactivation procedures before returning the object to the pool using MyPool.ReturnPooledObject(this).
+                      OnCollisionEnter:
+                      
+                      Purpose: Triggers object deactivation when a collision is detected.
+                      Description: The OnCollisionEnter method is an event handler that automatically invokes the ReturnToPool method when a collision occurs. This design ensures that objects are returned to the pool upon collision, promoting efficient memory management.
+                    </p>
+                </div>
+
+                <br>
 
                 <div class="slight-padding-above"></div>
                 
@@ -176,58 +202,11 @@
                 </div>
 
                 <p>
-                   In the making of this game we were supposed to think of 3 puzzles and we had to combine the 3 puzzle into a smooth flowing game. <br>
-                   The name of the assignment was "Shortburn", we worked together in groups of 5-6 people. 
-                   In my case there were 3 developers and 3 artists. <br>
-                   In the first puzzle as you can see in the video you need to find all the puzzle pieces in the room and stick them on a board to spawn the whole shield. 
-                   The second room you had to switch pov's to the second smaller player and go through a hole in the wall and through a bunch of parkour you have to make your way to a ball 
-                   and drop it on a lever that opened the third room. <br>In the third room you had to complete a Indiana Jones inspired tile puzzle. 
-                   <br>You could reveal the correct path by throwing rocks on the tiles. When you finished this puzzle you could go to the end door and finish the game.
+                  This game was a solo project. I had exactly 4 weeks to finish this game. At the beginning of this project we had to sign a 'contract' that would simulate the workfield with clients. In this contract we had to write down in detail what kind of features we wanted to make in the game. I chose to make a shader and a pretty advanced character controller. In the first week I built the map and started working on the character controller. I finished the character controller in the 3rd week and worked to implement the rest of the game and the shader with the time I had left. I ended up making a glowing shader using the language <code>GLSL</code>. After the project was done one of the teachers came by every student to give feedback on the code and the game itself. I enjoyed workin on my own for once and had a blast writing the shader.
                 </p>
 
                 <div class="slight-padding-above"></div>
 
-                <div class="section-title">
-                  <h2>My part of the project</h2>
-                </div>
-
-                <li>
-                  The whole Main Menu
-                </li>
-
-                <li>
-                  Dev Tool
-                </li>
-
-                <li>
-                  Cutscene Manager
-                </li>
-
-                <li>
-                  The whole Main Menu
-                </li>
-
-                <li>
-                  The playercontroller
-                </li>
-
-                <li>
-                  The door functionality
-                </li>
-
-                <li>
-                  The GameManager
-                </li>
-
-                <li>
-                  The first and second puzzle
-                </li>
-
-                <div class="slight-padding-above"></div>
-
-                <!-- <a href="" target="_blank">
-                  <iframe src="https://itch.io/embed/2335650" width="552" height="167" frameborder="0"><a href="https://kyrilldev.itch.io/twinstick" >Twinstick by kyrilldev</a></iframe>
-                </a> -->
               </div>
     
             </div>

@@ -68,106 +68,117 @@
                   <h2>Code HighLights and Explanations</h2>
                 </div>
 
-                <!-- Toggle button -->
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">ShieldPuzzleChecker.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Car Drifting functionality</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-1" class="gist-container" style="display: block;">
-                    <img src="/assets/img/codesnippets/theywereleft/ShieldPuzzleChecker.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/drifting.png" class="responsive-image">
                     <p>
-                      This script checks if the game can spawn puzzle pieces (<code>'_canSpawn' </code>is false) and if the first puzzle piece in the array (<code>'puzzlePieces[0]' </code>) 
-                      is not null. If these conditions are met, it uses <code>'Physics.OverlapSphere' </code>to find colliders within a specified radius around the first puzzle piece's position, 
-                      using a specified layer mask. The colliders list is then cleared.
-                    </p>
-                    <p>
-                      It checks if the number of colliders in the colliders list is equal to a specified piece count (<code>'_pieceCount'</code>) and if the number of puzzle pieces on the outline is 
-                      equal to or greater than 4 (<code>'puzzlePieceCount >= 4'</code>). If both conditions are met, it starts a coroutine (<code>'DestroyPuzzlePieces >= 4'</code>) to destroy the puzzle pieces.
+                      This code segment is part of a Unity game script and represents a player steering and sliding mechanism. It responds to player input, specifically the left shift key and horizontal movement keys (A and D). Key features of this code include:
+
+                      Shift Key Check: Verifies if the left shift key (KeyCode.LeftShift) is held down.
+                      
+                      Steering and Sliding Conditions: Depending on the steering direction (steerDirection), checks for input keys (A or D) and adjusts the rotation of a child object accordingly.
+                      
+                      Lerp Rotation: Utilizes Quaternion.Lerp to smoothly interpolate the local rotation of a child object towards a specified angle, providing a gradual sliding effect when steering.
+                      
+                      Steering Direction Adjustments: Modifies the steering direction (steerDirection) based on input, introducing a sliding effect when the player changes direction rapidly.
+                      
+                      Resetting Rotation: If no steering input is detected, gradually resets the rotation of the child object to its default position.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
+                
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">Assignwaypointeditortool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Ground Car Rotation</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/Assignwaypointeditortool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/groundrotation.png" class="responsive-image">
                     <p>
-                      In this snippet, I've crafted a function named <code>('AssignWaypoints')</code> designed for a Unity Cinemachine implementation. <br>
-                      This function dynamically assigns positions to a Cinemachine Smooth Path based on the provided waypoints. 
-                      It also toggles between multiple virtual cameras, enabling the camera associated with the specified level index. <br>
-                      The code not only sets the waypoints for smooth path traversal but also configures the camera to follow and look at a specific target, 
-                      enhancing the cinematic experience within the game. <br>This snippet showcases my ability to manage camera systems and create dynamic, 
-                      immersive experiences in Unity game development.
+                      The groundNormalRotation function is a method within a Unity game script, likely written in C#. It manages the rotation of an object based on the normal vector of the ground it is in contact with. Key features of this function include:
+
+                      Raycast for Ground Detection: Utilizes Physics.Raycast to cast a ray downward from the object's position to detect the ground within a specified range (5f).
+                      
+                      Ground Normal Rotation: If the ray hits the ground, it employs Quaternion.Lerp to smoothly interpolate the object's rotation towards a rotation aligned with the detected ground normal. This creates a visually realistic effect of the object adjusting its orientation to match the terrain.
+                      
+                      Touching Ground Flag: Sets the touchingGround flag to true if the object is in contact with the ground based on the raycast. Otherwise, it sets the flag to false.
                     </p>
                 </div>
 
                 <br>
 
-                <!-- Toggle button -->
+                
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                  <span class="toggle-text">CameraPlayback.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Movement function</span>
                 </button>
-                <!-- Container for the embedded Gist -->
+
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/CameraPlayback.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Move.png" class="responsive-image">
                     <p>
-                      In this coroutine, aptly named <code>'PathPosLerp'</code>, I implement smooth interpolation of a Cinemachine Virtual Camera along a tracked dolly path in Unity. 
-                      This function takes parameters such as the virtual camera <code>('vcam')</code>, the duration of the interpolation <code>('sec')</code>, and the level index <code>('l_levelIndex')</code>. <br>
-                      During the interpolation, the camera smoothly moves from the starting position to the end position. 
-                      The code also includes functionality to disable player control during cutscenes by updating a flag in the GameManager.<br>
-                      Finally, the associated virtual camera is disabled upon completion, showcasing my proficiency in creating seamless transitions and enhancing player experiences in Unity game development.
+                      The move function is a method within a Unity game script, likely written in C#. It controls the movement of a player-controlled object based on input. Key features of this function include:
+
+                      Real Speed Calculation: Calculates the real speed of the object before applying the velocity. This is useful for scenarios where the visual representation, like hair movement, should consider the velocity before it's affected by collisions.
+                      
+                      Input-driven Speed Control: Utilizes Input.GetKey to check for player input (W or S keys) and adjusts the currentSpeed accordingly. Lerp functions smoothly transition between different speed states to provide a polished and responsive feel.
+                      
+                      Velocity Adjustment: Computes the forward movement vector based on the player's input and sets the y-component of the velocity to the rigid body's downward velocity, ensuring that gravity's effect is maintained.
+                      
+                      Velocity Application: Updates the rigid body's velocity to the calculated speed vector, effectively moving the player-controlled object in the desired direction.
                     </p>
                 </div>
 
                 <br>
-                                <!-- Toggle button -->
+
+                
                 <button id="toggle-button" onclick="toggleGist(this)">
-                    <span class="toggle-icon">&#9654;</span> <!-- Unicode character for a right-pointing triangle -->
-                    <span class="toggle-text">EditorTool.cs</span>
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Respawning functionality</span>
                 </button>
 
-                <!-- Container for the embedded Gist -->
                 <div id="gist-container-4" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/EditorTool.png" class="responsive-image">
-                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      This function, <code>'OnGUI'</code>, defines a custom Unity editor window for convenient configuration of waypoints in the scene. The window provides an intuitive interface for managing waypoints within the game environment. Key features include:
+                      This code snippet is part of a Unity game script, likely written in C#. It implements a player respawn mechanism triggered by a specific input condition (Input.GetKey(KeyCode.R) && MayRespawn). Key features of this code include:
 
-                      <li>
-                        Information Label: Describes the purpose of the window, emphasizing its role in configuring waypoints.
-                      </li>
-                      <br>
-                      <li>
-                        Camera Manager Setup: Allows for the selection of a <code>'CameraManager'</code> object through a field. This manager is then located in the scene for further use.
-                      </li>
-                      <br>
-                      <li>
-                        Waypoint Configuration: Provides toggles for individual cells, allowing quick and visual configuration of different waypoints in the scene.
-                      </li>
-                      <br>
-                      <li>
-                        Spawn Empties Button: Triggers the spawning of entities (empties) based on the configured waypoints. Once spawned, the button sets the level position to zero.
-                      </li>
-                      <br>
-                      <li>
-                        Reset Waypoint Positions Button: Initiates a confirmation dialogue before resetting all waypoint positions. Upon confirmation, it resets the positions of associated GameObjects.
-                      </li>
-                      <br>
-                        This script showcases my ability to create custom Unity editor windows, streamlining the configuration process for waypoints in game development.
+                      Dimmer Animation Start: Invokes the StartDimmingAnim method from dimmerScript to initiate a screen dimming animation, providing visual feedback to the player.
+                      
+                      Checkpoint Information Display (Editor Only): In the Unity editor, prints the coordinates of the start checkpoint for testing and debugging purposes.
+                      
+                      Respawn Timer Management: Tracks the elapsed time (RespawnTimer) since the respawn input was initiated.
+                      
+                      Checkpoint Respawn Logic: After a specified delay (3 seconds), and if the player is allowed to respawn (MayRespawn), resets the player's position and rotation to the last checkpoint's position and rotation.
+                      
+                      Dimmer Timer and Reset: Manages the dimmer timer (DimmerTimer) and resets it upon successful respawn.
                     </p>
                 </div>
+
+                <br>
+
+                
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <span class="toggle-icon">&#9654;</span>
+                  <span class="toggle-text">Steerhandling function</span>
+                </button>
+
+                <div id="gist-container-5" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/nightracer/steeringhandling.png" class="responsive-image">
+                    <p>
+                      This code snippet is part of a Unity game script, likely written in C#. It dynamically adjusts the steering behavior of a vehicle based on its current speed (realSpeed). Key features of this code include:
+
+                      Speed-dependent Steering Calculation: Determines the steerAmount based on the current speed of the vehicle. If the speed (realSpeed) is greater than 30, it applies a faster steering response; otherwise, it uses a standard steering response. This introduces a realistic steering feel that varies with the vehicle's velocity.
+                      
+                      Steer Direction Adjustment: Adjusts the steerDirection based on the calculated steerAmount. If steerAmount is greater than 0, sets steerDirection to 1; if less than 0, sets it to -1; otherwise, sets it to 0. This ensures the correct direction of steering based on the calculated amount.
+                    </p>
+                </div>
+
+                <br>
 
                 <div class="slight-padding-above"></div>
                 
@@ -176,13 +187,7 @@
                 </div>
 
                 <p>
-                   In the making of this game we were supposed to think of 3 puzzles and we had to combine the 3 puzzle into a smooth flowing game. <br>
-                   The name of the assignment was "Shortburn", we worked together in groups of 5-6 people. 
-                   In my case there were 3 developers and 3 artists. <br>
-                   In the first puzzle as you can see in the video you need to find all the puzzle pieces in the room and stick them on a board to spawn the whole shield. 
-                   The second room you had to switch pov's to the second smaller player and go through a hole in the wall and through a bunch of parkour you have to make your way to a ball 
-                   and drop it on a lever that opened the third room. <br>In the third room you had to complete a Indiana Jones inspired tile puzzle. 
-                   <br>You could reveal the correct path by throwing rocks on the tiles. When you finished this puzzle you could go to the end door and finish the game.
+                  The goal of this project was to produce a decent working race game to the end customer: other students. During this project I had the pleasure to work with 3 other game artists and 1 other developer. Above this section you can see a couple of my code highlights I encourage you to take a look at those. We came with a plan to make a total of 3 racings tracks, make the car drive like your driving in mario kart and to make a working checkpoint system so that the player could respawning when they crashed. I think the end result turned out pretty decent.
                 </p>
 
                 <div class="slight-padding-above"></div>
