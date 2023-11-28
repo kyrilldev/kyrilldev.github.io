@@ -48,16 +48,20 @@
 
                 <div class="slight-padding-above"></div>
     
-                <iframe 
-                  src="https://www.youtube.com/embed/E4hLaeLBtr0?si=v11NFnkBLERv77UN&amp;controls=0&autoplay=1&mute=1&loop=1"
-                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen width="100%" height=31.3%>
-                </iframe>
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe src="https://www.youtube.com/embed/E4hLaeLBtr0?si=v11NFnkBLERv77UN&amp;controls=0&autoplay=1&mute=1&loop=1"
+                      frameborder="0"
+                      allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
 
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
                     <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/space-game-freelancing" target="_blank">Link</a></li><!-- replace with it's own -->
                   <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/FreelancingGamePortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
@@ -76,15 +80,16 @@
                 <div id="gist-container-1" class="gist-container" style="display: block;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      The TiltCamera method is a part of a Unity game script, likely written in C#. It manages the tilting behavior of the in-game camera in response to player movement. Key features of this code include:
-
-                      Crouch Check: Ensures that the camera doesn't tilt when the player is crouching, maintaining stability during crouched movement.
+                      The <code>'TiltCamera'</code> method manages the tilting behavior of the in-game camera in response to player movement. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Crouch Check: </strong> Ensures that the camera doesn't tilt when the player is crouching, maintaining stability during crouched movement.</li>
                       
-                      Dynamic Tilt Calculation: Utilizes player input (playerManager.playerMovement.x) to calculate the desired tilt angle (tilt). The tilt is determined based on whether the player is moving left, right, or not moving at all.
+                      <li><strong>Dynamic Tilt Calculation: </strong> Utilizes player input <code>('playerManager.playerMovement.x')</code> to calculate the desired tilt angle <code>('tilt')</code>. The tilt is determined based on whether the player is moving left, right, or not moving at all.</li>
                       
-                      Cross-Platform Input Handling: Implements a switch statement with comparison operators (<, >) instead of explicit values (== 1 or == -1) to accommodate various input methods, ensuring cross-platform compatibility.
+                      <li><strong>Cross-Platform Input Handling: </strong> Implements a switch statement with comparison operators <code>('<'', '>')</code> instead of explicit values (<code>'== 1</code>' or <code>'== -1'</code>) to accommodate various input methods, ensuring cross-platform compatibility.</li>
                       
-                      Tilt Smoothness: Applies a smoothing effect to the calculated tilt using Mathf.Lerp to gradually adjust the targetMoveTilt. The tilt is influenced by the player's vertical movement (playerManager.playerMovement.y), resulting in a different tilt when moving forward or backward.
+                      <li><strong>Tilt Smoothness: </strong> Applies a smoothing effect to the calculated tilt using <code>'Mathf.Lerp'</code> to gradually adjust the 'targetMoveTilt'. The tilt is influenced by the player's vertical movement <code>('playerManager.playerMovement.y')</code>, resulting in a different tilt when moving forward or backward.</li>
                     </p>
                 </div>
 
@@ -98,19 +103,20 @@
                 <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      The Fire method is a part of a Unity game script, likely written in C#. It manages the player's firing action, handling the instantiation and initialization of bullets. Key features of this code include:
-
-                      Input Action Callback: Responds to the firing action callback provided by the InputAction.CallbackContext parameter. This ensures that the firing logic is triggered only when the firing action starts (cxt.started).
+                      The Fire method manages the player's firing action, handling the instantiation and initialization of bullets. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Input Action Callback: </strong> Responds to the firing action callback provided by the <code>'InputAction.CallbackContext'</code> parameter. This ensures that the firing logic is triggered only when the firing action starts <code>('cxt.started')</code>.</li>
                       
-                      Base Rotation and Position: Captures the initial rotation (baseRotation) and position (basePosition) of the Shootpoint, which is likely the point from which bullets are fired.
+                      <li><strong>Base Rotation and Position: </strong> Captures the initial rotation <code>('baseRotation')</code> and position <code>('basePosition')</code> of the <code>'Shootpoint'</code>, which is likely the point from which bullets are fired.</li>
                       
-                      Object Pooling: Utilizes an object pool (Pool.GetPooledObject) to efficiently retrieve a bullet object from the pool, considering the initial rotation and position.
+                      <li><strong>Object Pooling: </strong> Utilizes an object pool <code>('Pool.GetPooledObject')</code> to efficiently retrieve a bullet object from the pool, considering the initial rotation and position.</li>
                       
-                      Bullet Component Addition: Dynamically adds a Bullet component to the instantiated bullet object if it doesn't already have one. This ensures consistent behavior and properties for all bullets.
+                      <li><strong>Bullet Component Addition: </strong> Dynamically adds a <code>'Bullet'</code> component to the instantiated bullet object if it doesn't already have one. This ensures consistent behavior and properties for all bullets.</li>
                       
-                      Bullet Direction Calculation: Determines the shooting direction (shootDir) based on the vector pointing from the player's position to the Shootpoint. This normalized direction provides the initial trajectory of the fired bullet.
+                      <li><strong>Bullet Direction Calculation: </strong> Determines the shooting direction <code>('shootDir')</code> based on the vector pointing from the player's position to the <code>'Shootpoint'</code>. This normalized direction provides the initial trajectory of the fired bullet.</li>
                       
-                      Bullet Initialization: Calls the Init method on the Bullet component of the instantiated object, passing the calculated shooting direction to initialize the bullet's behavior.
+                      <li><strong>Bullet Initialization: </strong> Calls the <code>'Init'</code> method on the <code>'Bullet'</code> component of the instantiated object, passing the calculated shooting direction to initialize the bullet's behavior.</li>
                     </p>
                 </div>
 
@@ -124,19 +130,20 @@
                 <div id="gist-container-3" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      The Headbob method is a component of a Unity game script, likely written in C#. It orchestrates a dynamic headbobbing effect for the player's camera, enhancing realism and immersion. Key features of this code include:
-
-                      Reduce Motion Handling: Checks if the player has opted to reduce motion effects, resetting relevant vectors to zero and bypassing the headbobbing calculations if enabled. This accommodates players who may prefer a motion-reduced experience.
+                      The <code>'Headbob'</code> method orchestrates a dynamic headbobbing effect for the player's camera, enhancing realism and immersion. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Reduce Motion Handling: </strong> Checks if the player has opted to reduce motion effects, resetting relevant vectors to zero and bypassing the headbobbing calculations if enabled. This accommodates players who may prefer a motion-reduced experience.</li>
                       
-                      Fall-induced Bobbing: Triggers a brief bobbing effect when the player falls and then lands, adding a subtle visual cue to the impact. This utilizes the BobOnce method.
+                      <li><strong>Fall-induced Bobbing: </strong> Triggers a brief bobbing effect when the player falls and then lands, adding a subtle visual cue to the impact. This utilizes the <code>'BobOnce'</code> method.</li>
                       
-                      Crouch and Sprint Bobbing: Adjusts the headbobbing frequency based on whether the player is crouching and sprinting simultaneously, enhancing the effect during specific movement conditions.
+                      <li><strong>Crouch and Sprint Bobbing: </strong> Adjusts the headbobbing frequency based on whether the player is crouching and sprinting simultaneously, enhancing the effect during specific movement conditions.</li>
                       
-                      Frequency Adjustment: Calls the desiredFreq method to dynamically adjust the headbobbing frequency based on movement conditions. The frequency adjustment is performed smoothly using Vector3.Lerp.
+                      <li><strong>Frequency Adjustment: </strong> Calls the <code>'desiredFreq'</code> method to dynamically adjust the headbobbing frequency based on movement conditions. The frequency adjustment is performed smoothly using <code>'Vector3.Lerp'</code>.</li>
                       
-                      Land Bobbing Offset: Utilizes lerping to gradually reduce the landBobOffset vector, contributing to a smoother transition between headbobbing states.
+                      <li><strong>Land Bobbing Offset: </strong> Utilizes lerping to gradually reduce the <code>'landBobOffset'</code> vector, contributing to a smoother transition between headbobbing states.</li>
                       
-                      Motion Check: Calls the CheckMotion method, likely responsible for managing the overall motion effects.
+                      <li><strong>Motion Check: </strong> Calls the <code>'CheckMotion'</code> method, likely responsible for managing the overall motion effects.</li>
                     </p>
                 </div>
 
@@ -150,19 +157,22 @@
                 <div id="gist-container-4" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      The Expand method is a key component of a Unity game script, likely written in C#. It dynamically expands an object pool by instantiating and initializing a specified number of objects. Key features of this code include:
+                      The <code>'Expand'</code> method dynamically expands an object pool by instantiating and initializing a specified number of objects. 
+                      <br>
+                      <br>
+                      Key features of this code include:
+                      <br>
+                      <li><strong>Looped Instantiation: </strong> Utilizes a <code>'for'</code> loop to instantiate a set number of objects <code>('l_ExpandSize')</code> based on the provided parameter.</li>
+                      
+                      <li><strong>Object Instantiation: </strong> Instantiates a new object <code>('newObject')</code> of the type specified by the <code>'PooledObject'</code> template.</li>    
 
-                      Looped Instantiation: Utilizes a for loop to instantiate a set number of objects (l_ExpandSize) based on the provided parameter.
+                      <li><strong>Component Retrieval: </strong> Retrieves the <code>'PoolItem'</code> and <code>'Subject'</code> components from the instantiated object, allowing for subsequent customization and management.</li>
                       
-                      Object Instantiation: Instantiates a new object (newObject) of the type specified by the PooledObject template.
+                      <li><strong>Initialization: </strong> Sets the <code>'PoolProperty'</code> of the <code>'PoolItem'</code> to link it to the current object pool. Additionally, adds the instantiated object as a subject to the player's health system <code>('playerHealth._subjects')</code>.</li>
                       
-                      Component Retrieval: Retrieves the PoolItem and Subject components from the instantiated object, allowing for subsequent customization and management.
+                      <li><strong>Global Subjects Assignment: </strong> Iterates through an array of enemy health systems <code>('enemyHealth')</code> and adds the instantiated object as a subject to each enemy health system.</li>
                       
-                      Initialization: Sets the PoolProperty of the PoolItem to link it to the current object pool. Additionally, adds the instantiated object as a subject to the player's health system (playerHealth._subjects).
-                      
-                      Global Subjects Assignment: Iterates through an array of enemy health systems (enemyHealth) and adds the instantiated object as a subject to each enemy health system.
-                      
-                      Object Return to Pool: Calls the ReturnPooledObject method, likely responsible for returning the instantiated object to the object pool for reuse.
+                      <li><strong>Object Return to Pool: </strong> Calls the <code>'ReturnPooledObject'</code> method, likely responsible for returning the instantiated object to the object pool for reuse.</li>
                     </p>
                 </div>
 
@@ -176,20 +186,23 @@
                 <div id="gist-container-5" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      The following methods are crucial components of an object pooling system in a Unity game script, likely written in C#:
-
-                      Activate:
-                      
-                      Purpose: Resets the death timer to zero, effectively reactivating an object.
-                      Description: The Activate method is responsible for resetting the DeathTimer variable to zero, indicating that the object is being reactivated. This method is often called when an object is retrieved from the pool for reuse.
-                      ReturnToPool:
-                      
-                      Purpose: Deactivates the object, returning it to the object pool for potential reuse.
-                      Description: The ReturnToPool method serves as a centralized control point for deactivating an object and returning it to the object pool (MyPool). It calls the DeActivate method to perform necessary deactivation procedures before returning the object to the pool using MyPool.ReturnPooledObject(this).
-                      OnCollisionEnter:
-                      
-                      Purpose: Triggers object deactivation when a collision is detected.
-                      Description: The OnCollisionEnter method is an event handler that automatically invokes the ReturnToPool method when a collision occurs. This design ensures that objects are returned to the pool upon collision, promoting efficient memory management.
+                      The following methods are crucial components of an object pooling system in a Unity game script, written in C#:
+                      <br>
+                      <br>
+                      <strong>Activate:</strong>
+                      <li><strong>Purpose:</strong> Resets the death timer to zero, effectively reactivating an object.</li>
+                      <li><strong>Description: </strong> The <code>'Activate'</code> method is responsible for resetting the <code>'DeathTimer'</code> variable to zero, indicating that the object is being reactivated. 
+                        This method is often called when an object is retrieved from the pool for reuse.</li>
+                      <br>
+                      <strong>ReturnToPool:</strong>
+                      <br>
+                      <li><strong>Purpose: </strong> Deactivates the object, returning it to the object pool for potential reuse.</li>
+                      <li><strong>Description: </strong> The <code>'ReturnToPool'</code> method serves as a centralized control point for deactivating an object and returning it to the object pool <code>('MyPool')</code>. It calls the DeActivate method to perform necessary deactivation procedures before returning the object to the pool using <code>'MyPool.ReturnPooledObject(this)'</code>.</li>
+                      <br>
+                      <strong>OnCollisionEnter:</strong>
+                      <br>
+                      <li><strong>Purpose: </strong> Triggers object deactivation when a collision is detected.</li>
+                      <li><strong>Description: </strong> The OnCollisionEnter method is an event handler that automatically invokes the ReturnToPool method when a collision occurs. This design ensures that objects are returned to the pool upon collision, promoting efficient memory management.</li>
                     </p>
                 </div>
 

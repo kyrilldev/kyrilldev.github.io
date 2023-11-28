@@ -48,16 +48,20 @@
 
                 <div class="slight-padding-above"></div>
     
-                <iframe 
-                  src="https://www.youtube.com/embed/rxeXKcWp8IA?si=uDtcbTv3Wr2YrPTJ&amp;controls=0&autoplay=1&mute=1&loop=1"
-                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen width="100%" height=31.3%>
-                </iframe>
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe src="https://www.youtube.com/embed/rxeXKcWp8IA?si=uDtcbTv3Wr2YrPTJ&amp;controls=0&autoplay=1&mute=1&loop=1"
+                      frameborder="0"
+                      allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
 
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
                     <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/1-week-game-jam" target="_blank">Link</a></li>
                   <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/1WeekGameJam2023Portfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
@@ -76,15 +80,16 @@
                 <div id="gist-container-1" class="gist-container" style="display: block;">
                     <img src="/assets/img/codesnippets/2023gamejam/canvasgroupfadein.png" class="responsive-image">
                     <p>
-                      The FadeIn coroutine is a versatile method within a Unity game script, likely written in C#. It facilitates a smooth fade-in effect for UI elements using the CanvasGroup component. Key features of this code include:
-
-                      Time-based Fading: Utilizes a while loop to incrementally adjust the alpha value of the CanvasGroup from 1 (fully opaque) to 0 (fully transparent) over a specified fadeDuration. This creates a gradual fade-in effect.
+                      The <code>'FadeIn'</code> coroutine facilitates a smooth fade-in effect for UI elements using the <code>'CanvasGroup'</code> component. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Time-based Fading: </strong> Utilizes a <code>'while'</code> loop to incrementally adjust the alpha value of the <code>'CanvasGroup'</code> from 1 (fully opaque) to 0 (fully transparent) over a specified <code>'fadeDuration'</code>. This creates a gradual fade-in effect.</li>
                       
-                      Interpolation for Smoothness: Implements Mathf.Lerp to smoothly interpolate the alpha value based on the elapsed time, providing a visually pleasing transition.
+                      <li><strong>Interpolation for Smoothness: </strong> Implements <code>'Mathf.Lerp'</code> to smoothly interpolate the alpha value based on the elapsed time, providing a visually pleasing transition.</li>
                       
-                      Coroutine Yielding: Uses yield return null to yield control back to the Unity engine each frame, ensuring that the coroutine doesn't block the main thread.
+                      <li><strong>Coroutine Yielding: </strong> Uses <code>'yield return null'</code> to yield control back to the Unity engine each frame, ensuring that the coroutine doesn't block the main thread.</li>
                       
-                      Interaction Disabling: After completing the fade-in, sets interactable and blocksRaycasts properties of the CanvasGroup to false. This prevents interaction with the UI element while it is faded in.
+                      <li><strong>Interaction Disabling: </strong> After completing the fade-in, sets <code>'interactable'</code> and <code>'blocksRaycasts'</code> properties of the <code>'CanvasGroup'</code> to false. This prevents interaction with the UI element while it is faded in.</li>
                     </p>
                 </div>
 
@@ -95,20 +100,21 @@
                   <span class="toggle-text">Dynamic Choice Selection Mechanism</span>
                 </button>
 
-                <div id="gist-container-2" class="gist-container" style="display: block;">
+                <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/2023gamejam/mirrorchoice.png" class="responsive-image">
                     <p>
-                      The Choose method is part of a Unity game script, likely written in C#. It handles the selection of choices within a game scenario. Key features of this code include:
-
-                      Dynamic Choice Retrieval: Utilizes the Unity EventSystem to retrieve the currently selected choice from the clicked button. The choice value is obtained from the Choice component attached to the clicked game object.
+                      The <code>'Choose'</code> method handles the selection of choices within a game scenario. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Dynamic Choice Retrieval: </strong> Utilizes the Unity <code>'EventSystem'</code> to retrieve the currently selected choice from the clicked button. The choice value is obtained from the <code>'Choice'</code> component attached to the clicked game object.</li>
                       
-                      Dynamic Element Spawning: Applies a switch statement on ChoiceIndex to dynamically spawn an element based on the selected choice. The specific element to spawn is determined by the choice value and the current ChoiceIndex.
+                      <li><strong>Dynamic Element Spawning: </strong> Applies a switch statement on <code>'ChoiceIndex'</code> to dynamically spawn an element based on the selected choice. The specific element to spawn is determined by the <code>'choice'</code> value and the current <code>'ChoiceIndex'</code>.</li>
                       
-                      Array-Based Element Selection: Depending on the ChoiceIndex, selects the appropriate array (choice1, choice2, etc.) and spawns the chosen element from that array.
+                      <li><strong>Array-Based Element Selection: </strong> Depending on the <code>'ChoiceIndex'</code>, selects the appropriate array (<code>'choice1'</code>, <code>'choice2'</code>, etc.) and spawns the chosen element from that array.</li>
                       
-                      Tracking Final Choices: Adds the selected choice to a finalCombo list, providing a record of the player's choices.
+                      <li><strong>Tracking Final Choices: </strong> Adds the selected choice to a <code>'finalCombo'</code> list, providing a record of the player's choices.</li>
                       
-                      Incremental Choice Index: Increments the ChoiceIndex to move on to the next set of choices or elements.
+                      <li><strong>Incremental Choice Index: </strong> Increments the <code>'ChoiceIndex'</code> to move on to the next set of choices or elements.</li>
                     </p>
                 </div>
 
@@ -119,16 +125,17 @@
                   <span class="toggle-text">Popup Animation with Position Lerping</span>
                 </button>
 
-                <div id="gist-container-3" class="gist-container" style="display: block;">
+                <div id="gist-container-3" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/2023gamejam/popupanim.png" class="responsive-image">
                     <p>
-                      The PopupAnimation method is a function within a Unity game script, likely written in C#. It orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
-
-                      Dynamic Popup Selection: Retrieves the specified popup element (popupPlaceholder) from an array of popups (popups) based on the provided index.
+                      The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Dynamic Popup Selection: </strong> Retrieves the specified popup element <code>('popupPlaceholder')</code> from an array of popups <code>('popups')</code> based on the provided <code>'index'</code>.</li>
                       
-                      Popup Position Toggle: Alternates between two popup positions (popupPos) to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the popupPos variable.
+                      <li><strong>Popup Position Toggle: </strong> Alternates between two popup positions <code>('popupPos')</code> to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the <code>'popupPos'</code> variable.</li>
                       
-                      Position Lerping Coroutine: Initiates a coroutine (PosLerp) to smoothly interpolate the position of the selected popup from its current position to the target position (popupPositions[popupPos].position). The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.
+                      <li><strong>Position Lerping Coroutine: </strong> Initiates a coroutine <code>('PosLerp')</code> to smoothly interpolate the position of the selected popup from its current position to the target position <code>('popupPositions[popupPos].position')</code>. The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.</li>
                     </p>
                 </div>
 
@@ -152,35 +159,23 @@
                 </div>
 
                 <li>
-                  The whole Main Menu
+                  The Main Menu
                 </li>
 
                 <li>
-                  Dev Tool
+                  The Choose functionality
                 </li>
 
                 <li>
-                  Cutscene Manager
+                  The Final Cutscene
                 </li>
 
                 <li>
-                  The whole Main Menu
+                  The backgound level
                 </li>
 
                 <li>
-                  The playercontroller
-                </li>
-
-                <li>
-                  The door functionality
-                </li>
-
-                <li>
-                  The GameManager
-                </li>
-
-                <li>
-                  The first and second puzzle
+                  The Game Design
                 </li>
 
                 <div class="slight-padding-above"></div>

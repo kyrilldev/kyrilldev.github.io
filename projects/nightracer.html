@@ -48,16 +48,20 @@
 
                 <div class="slight-padding-above"></div>
     
-                <iframe 
-                  src="https://www.youtube.com/embed/l_FiJU_LS2c?si=JmK4prOolYaAgmSE&amp;controls=0&autoplay=1&mute=1&loop=1"
-                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen width="100%" height=31.3%>
-                </iframe>
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe src="https://www.youtube.com/embed/l_FiJU_LS2c?si=JmK4prOolYaAgmSE&amp;controls=0&autoplay=1&mute=1&loop=1"
+                      frameborder="0"
+                      allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
 
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
                     <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/nightracer" target="_blank">Link</a></li><!-- replace with it's own -->
                   <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/NightRacerPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
@@ -70,23 +74,23 @@
 
                 <button id="toggle-button" onclick="toggleGist(this)">
                   <span class="toggle-icon">&#9654;</span>
-                  <span class="toggle-text">Car Drifting functionality</span>
+                  <span class="toggle-text">Player Steering and Drifting Mechanism</span>
                 </button>
 
                 <div id="gist-container-1" class="gist-container" style="display: block;">
                     <img src="/assets/img/codesnippets/nightracer/drifting.png" class="responsive-image">
                     <p>
-                      This code segment is part of a Unity game script and represents a player steering and sliding mechanism. It responds to player input, specifically the left shift key and horizontal movement keys (A and D). Key features of this code include:
-
-                      Shift Key Check: Verifies if the left shift key (KeyCode.LeftShift) is held down.
+                      This code segment responds to player input, specifically the left shift key and horizontal movement keys (A and D). Key features of this code include:
+                      <br>
+                      <li><strong>Shift Key Check: </strong> Verifies if the left shift key (<code>'KeyCode.LeftShift'</code>) is held down.</li>
                       
-                      Steering and Sliding Conditions: Depending on the steering direction (steerDirection), checks for input keys (A or D) and adjusts the rotation of a child object accordingly.
+                      <li><strong>Steering and Sliding Conditions: </strong> Depending on the steering direction (<code>'steerDirection'</code>), checks for input keys (A or D) and adjusts the rotation of a child object accordingly.</li>
                       
-                      Lerp Rotation: Utilizes Quaternion.Lerp to smoothly interpolate the local rotation of a child object towards a specified angle, providing a gradual sliding effect when steering.
+                      <li><strong>Lerp Rotation: </strong> Utilizes Quaternion.Lerp to smoothly interpolate the local rotation of a child object towards a specified angle, providing a gradual sliding effect when steering.</li>
                       
-                      Steering Direction Adjustments: Modifies the steering direction (steerDirection) based on input, introducing a sliding effect when the player changes direction rapidly.
+                      <li><strong>Steering Direction Adjustments: </strong> Modifies the steering direction (<code>'steerDirection'</code>) based on input, introducing a sliding effect when the player changes direction rapidly.</li>
                       
-                      Resetting Rotation: If no steering input is detected, gradually resets the rotation of the child object to its default position.
+                      <li><strong>Resetting Rotation: </strong> If no steering input is detected, gradually resets the rotation of the child object to its default position.</li>
                     </p>
                 </div>
 
@@ -95,19 +99,19 @@
                 
                 <button id="toggle-button" onclick="toggleGist(this)">
                   <span class="toggle-icon">&#9654;</span>
-                  <span class="toggle-text">Ground Car Rotation</span>
+                  <span class="toggle-text">Ground Normal Rotation Function</span>
                 </button>
 
                 <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/groundrotation.png" class="responsive-image">
                     <p>
-                      The groundNormalRotation function is a method within a Unity game script, likely written in C#. It manages the rotation of an object based on the normal vector of the ground it is in contact with. Key features of this function include:
-
-                      Raycast for Ground Detection: Utilizes Physics.Raycast to cast a ray downward from the object's position to detect the ground within a specified range (5f).
+                      The <code>'groundNormalRotation'</code> function manages the rotation of an object based on the normal vector of the ground it is in contact with. Key features of this function include:
+                      <br>
+                      <li><strong>Raycast for Ground Detection: </strong> Utilizes <code>'Physics.Raycast'</code> to cast a ray downward from the object's position to detect the ground within a specified range (<code>'5f'</code>).</li>
                       
-                      Ground Normal Rotation: If the ray hits the ground, it employs Quaternion.Lerp to smoothly interpolate the object's rotation towards a rotation aligned with the detected ground normal. This creates a visually realistic effect of the object adjusting its orientation to match the terrain.
+                      <li><strong>Ground Normal Rotation: </strong> If the ray hits the ground, it employs <code>'Quaternion.Lerp'</code> to smoothly interpolate the object's rotation towards a rotation aligned with the detected ground normal. This creates a visually realistic effect of the object adjusting its orientation to match the terrain.</li>
                       
-                      Touching Ground Flag: Sets the touchingGround flag to true if the object is in contact with the ground based on the raycast. Otherwise, it sets the flag to false.
+                      <li><strong>Touching Ground Boolean: </strong> Sets the <code>'touchingGround'</code> boolean to true if the object is in contact with the ground based on the raycast. Otherwise, it sets the flag to false.</li>
                     </p>
                 </div>
 
@@ -122,15 +126,15 @@
                 <div id="gist-container-3" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Move.png" class="responsive-image">
                     <p>
-                      The move function is a method within a Unity game script, likely written in C#. It controls the movement of a player-controlled object based on input. Key features of this function include:
-
-                      Real Speed Calculation: Calculates the real speed of the object before applying the velocity. This is useful for scenarios where the visual representation, like hair movement, should consider the velocity before it's affected by collisions.
+                      The <code>'move'</code> function controls the movement of a player-controlled object based on input. Key features of this function include:
+                      <br>
+                      <li><strong>Real Speed Calculation: </strong>Calculates the real speed of the object before applying the velocity. This is useful for scenarios where the visual representation, like hair movement, should consider the velocity before it's affected by collisions.</li>
                       
-                      Input-driven Speed Control: Utilizes Input.GetKey to check for player input (W or S keys) and adjusts the currentSpeed accordingly. Lerp functions smoothly transition between different speed states to provide a polished and responsive feel.
+                      <li><strong>Input-driven Speed Control: </strong>Utilizes <code>'Input.GetKey'</code> to check for player input (W or S keys) and adjusts the <code>'currentSpeed'</code> accordingly. Lerp functions smoothly transition between different speed states to provide a polished and responsive feel.</li>
                       
-                      Velocity Adjustment: Computes the forward movement vector based on the player's input and sets the y-component of the velocity to the rigid body's downward velocity, ensuring that gravity's effect is maintained.
+                      <li><strong>Velocity Adjustment: </strong>Computes the forward movement vector based on the player's input and sets the y-component of the velocity to the rigid body's downward velocity, ensuring that gravity's effect is maintained.</li>
                       
-                      Velocity Application: Updates the rigid body's velocity to the calculated speed vector, effectively moving the player-controlled object in the desired direction.
+                      <li><strong>Velocity Application: </strong>Updates the rigid body's velocity to the calculated speed vector, effectively moving the player-controlled object in the desired direction.</li>
                     </p>
                 </div>
 
@@ -145,17 +149,17 @@
                 <div id="gist-container-4" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/Respawningwithdimming.png" class="responsive-image">
                     <p>
-                      This code snippet is part of a Unity game script, likely written in C#. It implements a player respawn mechanism triggered by a specific input condition (Input.GetKey(KeyCode.R) && MayRespawn). Key features of this code include:
-
-                      Dimmer Animation Start: Invokes the StartDimmingAnim method from dimmerScript to initiate a screen dimming animation, providing visual feedback to the player.
+                      This code snippet implements a player respawn mechanism triggered by a specific input condition <code>('Input.GetKey(KeyCode.R) && MayRespawn')</code>. Key features of this code include:
+                      <br>
+                      <li><strong>Dimmer Animation Start: </strong> Invokes the <code>'StartDimmingAnim'</code> method from <code>'dimmerScript'</code> to initiate a screen dimming animation, providing visual feedback to the player.</li>
                       
-                      Checkpoint Information Display (Editor Only): In the Unity editor, prints the coordinates of the start checkpoint for testing and debugging purposes.
+                      <li><strong>Checkpoint Information Display (Editor Only): </strong> In the Unity editor, prints the coordinates of the start checkpoint for testing and debugging purposes.</li>
                       
-                      Respawn Timer Management: Tracks the elapsed time (RespawnTimer) since the respawn input was initiated.
+                      <li><strong>Respawn Timer Management: </strong> Tracks the elapsed time <code>('RespawnTimer')</code> since the respawn input was initiated.</li>
                       
-                      Checkpoint Respawn Logic: After a specified delay (3 seconds), and if the player is allowed to respawn (MayRespawn), resets the player's position and rotation to the last checkpoint's position and rotation.
+                      <li><strong>Checkpoint Respawn Logic: </strong> After a specified delay (3 seconds), and if the player is allowed to respawn <code>('MayRespawn')</code>, resets the player's position and rotation to the last checkpoint's position and rotation.</li>
                       
-                      Dimmer Timer and Reset: Manages the dimmer timer (DimmerTimer) and resets it upon successful respawn.
+                      <li><strong>Dimmer Timer and Reset: </strong> Manages the dimmer timer <code>('DimmerTimer')</code> and resets it upon successful respawn.</li>
                     </p>
                 </div>
 
@@ -170,11 +174,11 @@
                 <div id="gist-container-5" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/nightracer/steeringhandling.png" class="responsive-image">
                     <p>
-                      This code snippet is part of a Unity game script, likely written in C#. It dynamically adjusts the steering behavior of a vehicle based on its current speed (realSpeed). Key features of this code include:
-
-                      Speed-dependent Steering Calculation: Determines the steerAmount based on the current speed of the vehicle. If the speed (realSpeed) is greater than 30, it applies a faster steering response; otherwise, it uses a standard steering response. This introduces a realistic steering feel that varies with the vehicle's velocity.
+                      This code snippet dynamically adjusts the steering behavior of a vehicle based on its current speed <code>('realSpeed')</code>. Key features of this code include:
+                      <br>
+                      <li><strong>Speed-dependent Steering Calculation: </strong> Determines the <code>'steerAmount'</code> based on the current speed of the vehicle. If the speed <code>('realSpeed')</code> is greater than 30, it applies a faster steering response; otherwise, it uses a standard steering response. This introduces a realistic steering feel that varies with the vehicle's velocity.</li>
                       
-                      Steer Direction Adjustment: Adjusts the steerDirection based on the calculated steerAmount. If steerAmount is greater than 0, sets steerDirection to 1; if less than 0, sets it to -1; otherwise, sets it to 0. This ensures the correct direction of steering based on the calculated amount.
+                      <li><strong>Steer Direction Adjustment: </strong> Adjusts the <code>'steerDirection'</code> based on the calculated <code>'steerAmount'</code>. If <code>'steerAmount'</code> is greater than 0, sets <code>'steerDirection'</code> to 1; if less than 0, sets it to -1; otherwise, sets it to 0. This ensures the correct direction of steering based on the calculated amount.</li>
                     </p>
                 </div>
 
@@ -197,35 +201,23 @@
                 </div>
 
                 <li>
-                  The whole Main Menu
+                  Map/Track Layout
                 </li>
 
                 <li>
-                  Dev Tool
+                  Project Assembly
                 </li>
 
                 <li>
-                  Cutscene Manager
+                  Car/Player Movement
                 </li>
 
                 <li>
-                  The whole Main Menu
+                  Unity High Definition Render Pipeline configuration
                 </li>
 
                 <li>
-                  The playercontroller
-                </li>
-
-                <li>
-                  The door functionality
-                </li>
-
-                <li>
-                  The GameManager
-                </li>
-
-                <li>
-                  The first and second puzzle
+                  Checkpoints System
                 </li>
 
                 <div class="slight-padding-above"></div>

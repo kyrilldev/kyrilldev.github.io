@@ -48,16 +48,21 @@
 
                 <div class="slight-padding-above"></div>
     
-                <iframe 
-                  src="https://www.youtube.com/embed/bqsfaoZ1meY?si=gakQKFdVq-cXLt98&amp;controls=0&autoplay=1&mute=1&loop=1"
-                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen width="100%" height=31.3%>
-                </iframe>
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe 
+                      src="https://www.youtube.com/embed/bqsfaoZ1meY?si=gakQKFdVq-cXLt98&amp;controls=0&autoplay=1&mute=1&loop=1"
+                      frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
+
 
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
                     <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/twinstick" target="_blank">Link</a></li><!-- replace with it's own -->
                   <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/TwinstickPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
@@ -76,19 +81,19 @@
                 <div id="gist-container-1" class="gist-container" style="display: block;">
                     <img src="/assets/img/codesnippets/twinstick/EnemyAttackPlayer.png" class="responsive-image">
                     <p>
-                      The AttackPlayer function is a method within a game script, likely written in Unity with C#. It handles the logic for an enemy character to attack a player. Key features of this function include:
+                      The AttackPlayer function handles the logic for an enemy character to attack a player. Key features of this function include:
+                      <br>
+                      <li><strong>Navigation Reset: </strong>Uses Unity's <code>'NavMeshAgent'</code> to set the destination to the enemy's current position, effectively pausing its movement.</li>
 
-                      Navigation Reset: Uses Unity's NavMeshAgent to set the destination to the enemy's current position, effectively pausing its movement.
+                      <li><strong>Rotation towards Player: </strong>Utilizes <code>'transform.LookAt(player)'</code> to make the enemy character face the player.</li>
 
-                      Rotation towards Player: Utilizes transform.LookAt(player) to make the enemy character face the player.
+                      <li><strong>Projectile Instantiation: </strong>Instantiates a projectile (<code>'projectile'</code>) at the enemy's position using <code>'Instantiate'</code>, providing it with an initial velocity in the forward direction.</li>
 
-                      Projectile Instantiation: Instantiates a projectile (projectile) at the enemy's position using Instantiate, providing it with an initial velocity in the forward direction.
+                      <li><strong>Projectile Movement: </strong> Translates the enemy character in the forward direction at a specified speed (<code>'projectileSpeed * Time.deltaTime'</code>), simulating the projectile launch.</li>
 
-                      Projectile Movement: Translates the enemy character in the forward direction at a specified speed (projectileSpeed * Time.deltaTime), simulating the projectile launch.
+                      <li><strong>Attack Cooldown: </strong> Implements a cooldown mechanism (<code>'timeBetweenAttacks'</code>) to prevent the enemy from attacking continuously. The  <code>'Invoke'</code> function is used to schedule the <code>'ResetAttack'</code> method after a specified delay.</li>
 
-                      Attack Cooldown: Implements a cooldown mechanism (timeBetweenAttacks) to prevent the enemy from attacking continuously. The Invoke function is used to schedule the ResetAttack method after a specified delay.
-
-                      Attack Reset: The ResetAttack method resets the alreadyAttacked flag, allowing the enemy to attack again after the cooldown period.
+                      <li><strong>Attack Reset: </strong> The <code>'ResetAttack'</code> method resets the <code>'alreadyAttacked'</code> boolean, allowing the enemy to attack again after the cooldown period.</li>
                     </p>
                 </div>
 
@@ -102,17 +107,17 @@
                 <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/twinstick/EnemyNextTarget.png" class="responsive-image">
                     <p>
-                      The SetNextTarget function is a method within a game script, likely written in Unity with C#. It manages the navigation system for an agent, determining its next target waypoint. Key features of this function include:
-
-                      Previous Index Tracking: Stores the current index as prevIndex to keep track of the agent's previous waypoint.
+                      The SetNextTarget function manages the navigation system for an agent, determining its next target waypoint. Key features of this function include:
+                      <br>
+                      <li><strong>Previous Index Tracking: </strong> Stores the current index as <code>'prevIndex'</code> to keep track of the agent's previous waypoint.</li>
                       
-                      Conditional Random Movement: If _MoveRandom is enabled, randomly selects a waypoint index from the list (_Waypoints). If the new index matches the previous one, increments it to ensure a change in destination.
+                      <li><strong>Conditional Random Movement: </strong> If <code>'_MoveRandom'</code> is enabled, randomly selects a waypoint index from the list (<code>'_Waypoints'</code>). If the new index matches the previous one, increments it to ensure a change in destination.</li>
                       
-                      Sequential Movement: If _MoveRandom is not enabled, increments the current index in a sequential manner, ensuring the agent moves through waypoints in order.
+                      <li><strong>Sequential Movement: </strong> If <code>'_MoveRandom'</code> is not enabled, increments the current index in a sequential manner, ensuring the agent moves through waypoints in order.</li>
                       
-                      Index Wraparound: Handles index wraparound by using modulo (_currentIndex %= _Waypoints.Count), ensuring the agent cycles through waypoints seamlessly.
+                      <li><strong>Index Wraparound: </strong> Handles index wraparound by using modulo (<code>'_currentIndex %= _Waypoints.Count'</code>), ensuring the agent cycles through waypoints seamlessly.</li>
                       
-                      Navigation Destination: Sets the agent's destination to the position of the waypoint corresponding to the calculated index using SetDestination.
+                      <li><strong>Navigation Destination: </strong> Sets the agent's destination to the position of the waypoint corresponding to the calculated index using <code>'SetDestination'</code>.</li>
                     </p>
                 </div>
 
@@ -126,15 +131,15 @@
                 <div id="gist-container-3" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/twinstick/EnemyPatrolling.png" class="responsive-image">
                     <p>
-                      The Patrolling function is a method within a game script, likely written in Unity with C#. It governs the patrolling behavior of an agent, ensuring it moves between designated walk points. Key features of this function include:
-
-                      Walk Point Initialization: Checks if a walk point has been set (!walkPointSet). If not, it calls SearchWalkPoint() to find a suitable location within the patrol area.
+                      The Patrolling function governs the patrolling behavior of an agent, ensuring it moves between designated walk points. Key features of this function include:
+                      <br>
+                      <li><strong>Walk Point Initialization: </strong> Checks if a walk point has been set (<code>'!walkPointSet'</code>). If not, it calls 'SearchWalkPoint()' to find a suitable location within the patrol area.</li>
                       
-                      Destination Setting: If a walk point is set, uses agent.SetDestination(walkPoint) to guide the agent towards the designated walk point.
+                      <li><strong>Destination Setting: </strong> If a walk point is set, uses <code>'agent.SetDestination(walkPoint)'</code> to guide the agent towards the designated walk point.</li>
                       
-                      Distance Check: Calculates the distance between the agent's current position and the walk point using Vector3 distanceToWaypoint = transform.position - walkPoint;.
+                      <li><strong>Distance Check: </strong> Calculates the distance between the agent's current position and the walk point using <code>'Vector3 distanceToWaypoint = transform.position - walkPoint;'</code>.</li>
                       
-                      Walk Point Reset: If the agent is close enough to the walk point (distanceToWaypoint.magnitude < 1f), it marks walkPointSet as false, indicating that the agent has reached its destination and is ready to search for a new walk point.
+                      <li><strong>Walk Point Reset: </strong> If the agent is close enough to the walk point (<code>'distanceToWaypoint.magnitude < 1f'</code>), it marks <code>'walkPointSet'</code> as false, indicating that the agent has reached its destination and is ready to search for a new walk point.</li>
                     </p>
                 </div>
 
@@ -148,15 +153,15 @@
                 <div id="gist-container-4" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/twinstick/gunControlling.png" class="responsive-image">
                     <p>
-                      The Update function represents a crucial part of a game script, likely written in Unity with C#. It governs the behavior of a weapon system, managing ammunition, reloading, and firing. Key features of this function include:
-
-                      Ammo Pickup Handling: Checks if the player has picked up ammo (AmmoPickUp.hasPickedUpAmmo). If true, increases the current ammo count by the specified value (ammoValue) and resets the pickup flag.
+                      The Update function governs the behavior of a weapon system, managing ammunition, reloading, and firing. Key features of this function include:
+                      <br>
+                      <li><strong>Ammo Pickup Handling: </strong> Checks if the player has picked up ammo (<code>'AmmoPickUp.hasPickedUpAmmo'</code>). If true, increases the current ammo count by the specified value (<code>'ammoValue'</code>) and resets the pickup flag.</li>
                       
-                      Ammo Limitation: Ensures that the current ammo does not exceed the defined maximum ammo (maxAmmo).
+                      <li><strong>Ammo Limitation: </strong> Ensures that the current ammo does not exceed the defined maximum ammo (<code>'maxAmmo'</code>).</li>
                       
-                      Reloading Logic: If the player is not already in the process of reloading (isReloading is false) and the current ammo is depleted, triggers the Reload coroutine.
+                      <li><strong>Reloading Logic: </strong> If the player is not already in the process of reloading (<code>'isReloading'</code> is false) and the current ammo is depleted, triggers the <code>'Reload'</code> coroutine.</li>
                       
-                      Fire Input Handling: Listens for input (e.g., left mouse button) and a cooldown mechanism (Time.time >= nextTimeToFiring). If conditions are met, initiates the Shoot method and sets the next time to fire based on the defined fire rate.
+                      <li><strong>Fire Input Handling: </strong> Listens for input (e.g., left mouse button) and a cooldown mechanism (<code>'Time.time >= nextTimeToFiring'</code>). If conditions are met, initiates the <code>'Shoot'</code> method and sets the next time to fire based on the defined fire rate.</li>
                     </p>
                 </div>
 
@@ -179,35 +184,27 @@
                 </div>
 
                 <li>
-                  The whole Main Menu
+                  The Game Loop
                 </li>
 
                 <li>
-                  Dev Tool
+                  Player Movement
                 </li>
 
                 <li>
-                  Cutscene Manager
+                  Shooting & Reloading
                 </li>
 
                 <li>
-                  The whole Main Menu
+                  EnemyBehaviour
                 </li>
 
                 <li>
-                  The playercontroller
+                  Keycard and Door functionality
                 </li>
 
                 <li>
-                  The door functionality
-                </li>
-
-                <li>
-                  The GameManager
-                </li>
-
-                <li>
-                  The first and second puzzle
+                  Ammo, Health and Shield Pickups
                 </li>
 
                 <div class="slight-padding-above"></div>

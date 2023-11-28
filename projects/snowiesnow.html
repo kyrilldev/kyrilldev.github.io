@@ -48,16 +48,20 @@
 
                 <div class="slight-padding-above"></div>
     
-                <iframe 
-                  src="https://www.youtube.com/embed/hxGTHxPpwpg?si=mXOq875Ynj2tbKSM&amp;controls=0&autoplay=1&mute=1&loop=1"
-                  frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen width="100%" height=31.3%>
-                </iframe>
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe src="https://www.youtube.com/embed/hxGTHxPpwpg?si=mXOq875Ynj2tbKSM&amp;controls=0&autoplay=1&mute=1&loop=1"
+                      frameborder="0"
+                      allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
 
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya</li>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
                   <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/SnowieSnowPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
                 
@@ -75,14 +79,14 @@
                 <div id="gist-container-1" class="gist-container" style="display: block;">
                     <img src="/assets/img/codesnippets/snowiesnow/DecreaseMulti.png" class="responsive-image">
                     <p>
-                      The DoPowerup method represents the functionality of a power-up effect. Key features of this code include:
-
-                      Player-Specific Powerup: Checks the PlayerString to determine which player is affected by the power-up. If it's "Player1," it triggers a UI animation and starts a coroutine to decrease the score multiplier for "Enemy" entities. If it's "Player2," it does the same for the other player.
+                      The <code>'DoPowerup'</code> method represents the functionality of a power-up effect. Key features of this code include:
+                      <br>
+                      <li><strong>Player-Specific Powerup: </strong> Checks the <code>'PlayerString'</code> to determine which player is affected by the power-up. If it's "Player1," it triggers a UI animation and starts a coroutine to decrease the score multiplier for "Enemy" entities. If it's "Player2," it does the same for the other player.</li>
                       
-                      UI Animation Trigger: Initiates a UI animation through UIManager.Instance.PlayPowerupAnim, providing visual feedback to the player.
+                      <li><strong>UI Animation Trigger: </strong> Initiates a UI animation through <code>'UIManager.Instance.PlayPowerupAnim'</code>, providing visual feedback to the player.</li>
                       
-                      Score Multiplier Decrease Coroutine: Calls the DecreaseMultiplier coroutine, passing the appropriate player index for updating the score multiplier.
-                      
+                      <li><strong>Score Multiplier Decrease Coroutine: </strong> Calls the <code>'DecreaseMultiplier'</code> coroutine, passing the appropriate player index for updating the score multiplier.</li>
+                      <br>
                       The DecreaseMultiplier coroutine gradually reduces the score multiplier for the specified player index to 0.5 over a duration of 15 seconds. If the current score multiplier is already less than 0.5, the coroutine is not triggered.
                     </p>
                 </div>
@@ -97,13 +101,13 @@
                 <div id="gist-container-2" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/snowiesnow/IncreaseMulti.png" class="responsive-image">
                     <p>
-                      The IncreaseMultiplier coroutine represents the functionality of a power-up effect for increasing score multipliers. Key features of this code include:
-
-                      Player-Specific Multiplier Increase: Utilizes a switch statement on PlayerString to determine the player index. Depending on the player, triggers a UI animation through UIManager.Instance.PlayPowerupAnim and starts the coroutine to increase the score multiplier for the corresponding player.
+                      The <code>'IncreaseMultiplier'</code> coroutine represents the functionality of a power-up effect for increasing score multipliers. Key features of this code include:
+                      <br>
+                      <li><strong>Player-Specific Multiplier Increase: </strong> Utilizes a <code>'switch</code>' statement on <code>'PlayerString'</code> to determine the player index. Depending on the player, triggers a UI animation through <code>'UIManager.Instance.PlayPowerupAnim'</code> and starts the coroutine to increase the score multiplier for the corresponding player.</li>
                       
-                      Score Multiplier Adjustment: Increases the score multiplier for the specified player index by 1, providing a gameplay bonus.
+                      <li><strong>Score Multiplier Adjustment: </strong> Increases the score multiplier for the specified player index by 1, providing a gameplay bonus.</li>
                       
-                      Time-Limited Increase: Pauses the coroutine for a duration of 15 seconds using yield return new WaitForSeconds(15), and then decreases the score multiplier back to its original value. This ensures a temporary boost in scoring.
+                      <li><strong>Time-Limited Increase: </strong> Pauses the coroutine for a duration of 15 seconds using <code>'yield return new WaitForSeconds(15)'</code>, and then decreases the score multiplier back to its original value. This ensures a temporary boost in scoring.</li>
                     </p>
                 </div>
 
@@ -117,17 +121,15 @@
                 <div id="gist-container-3" class="gist-container" style="display: none;">
                     <img src="/assets/img/codesnippets/snowiesnow/PlayPowerupAnim.png" class="responsive-image">
                     <p>
-                      The PlayPowerupAnim coroutine is part of a Unity game script, likely written in C#. It handles the instantiation and display of power-up animations on the UI. Key features of this code include:
-
-                      Dynamic Animation Instantiation: Instantiates a power-up animation object (anim) based on the provided SpritesIndex and PowerupName. The instantiated object is a child of the script's game object.
+                      The <code>'PlayPowerupAnim'</code> coroutine is part of a Unity game script, likely written in C#. It handles the instantiation and display of power-up animations on the UI. Key features of this code include:
+                      <br>
+                      <li><strong>Dynamic Animation Instantiation: </strong> Instantiates a power-up animation object <code>('anim')</code> based on the provided <code>'SpritesIndex'</code> and <code>'PowerupName'</code>. The instantiated object is a child of the script's game object.</li>
                       
-                      UI Text and Sprite Setting: Retrieves the Image and TextMeshProUGUI components from the instantiated animation object and sets their sprite and text properties based on the provided parameters (SpritesIndex and PowerupName).
+                      <li><strong>UI Text and Sprite Setting: </strong> Retrieves the <code>'Image'</code> and <code>'TextMeshProUGUI'</code> components from the instantiated animation object and sets their sprite and text properties based on the provided parameters (<code>'SpritesIndex'</code> and <code>'PowerupName'</code>).</li>
                       
-                      Animation Display Duration: Delays the coroutine for a duration of 3 seconds using yield return new WaitForSeconds(3), giving the player time to observe the power-up animation.
+                      <li><strong>Animation Display Duration: </strong> Delays the coroutine for a duration of 3 seconds using <code>'yield return new WaitForSeconds(3)'</code>, giving the player time to observe the power-up animation.</li>
                       
-                      Deactivation: Sets the instantiated animation object to inactive after the display duration, effectively removing it from the UI.
-                      
-                      Note: The comment mentions the need for object pool implementation, indicating a consideration for optimizing the instantiation and reuse of power-up animations.
+                      <li><strong>Deactivation: </strong> Sets the instantiated animation object to inactive after the display duration, effectively removing it from the UI.</li>
                     </p>
                 </div>
 
@@ -152,35 +154,23 @@
                 </div>
 
                 <li>
-                  The whole Main Menu
+                  The Game User Interface
                 </li>
 
                 <li>
-                  Dev Tool
+                  Powerup functionality
                 </li>
 
                 <li>
-                  Cutscene Manager
+                  The UI Manager partly
                 </li>
 
                 <li>
-                  The whole Main Menu
+                  Timer functionality
                 </li>
 
                 <li>
-                  The playercontroller
-                </li>
-
-                <li>
-                  The door functionality
-                </li>
-
-                <li>
-                  The GameManager
-                </li>
-
-                <li>
-                  The first and second puzzle
+                  Powerup functionality
                 </li>
 
                 <div class="slight-padding-above"></div>
