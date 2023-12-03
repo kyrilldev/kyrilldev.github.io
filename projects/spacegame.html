@@ -87,7 +87,7 @@
                       
                       <li><strong>Dynamic Tilt Calculation: </strong> Utilizes player input <code>('playerManager.playerMovement.x')</code> to calculate the desired tilt angle <code>('tilt')</code>. The tilt is determined based on whether the player is moving left, right, or not moving at all.</li>
                       
-                      <li><strong>Cross-Platform Input Handling: </strong> Implements a switch statement with comparison operators <code>('<'', '>')</code> instead of explicit values (<code>'== 1</code>' or <code>'== -1'</code>) to accommodate various input methods, ensuring cross-platform compatibility.</li>
+                      <li><strong>Cross-Platform Input Handling: </strong> Implements a switch statement with comparison operators <code>('<'', '>')</code> instead of explicit values (<code>'== 1'</code> or <code>'== -1'</code>) to accommodate various input methods, ensuring cross-platform compatibility.</li>
                       
                       <li><strong>Tilt Smoothness: </strong> Applies a smoothing effect to the calculated tilt using <code>'Mathf.Lerp'</code> to gradually adjust the 'targetMoveTilt'. The tilt is influenced by the player's vertical movement <code>('playerManager.playerMovement.y')</code>, resulting in a different tilt when moving forward or backward.</li>
                     </p>
