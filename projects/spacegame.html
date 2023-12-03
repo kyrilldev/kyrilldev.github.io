@@ -108,7 +108,7 @@
                       <br>
                       <li><strong>Input Action Callback: </strong> Responds to the firing action callback provided by the <code>'InputAction.CallbackContext'</code> parameter. This ensures that the firing logic is triggered only when the firing action starts <code>('cxt.started')</code>.</li>
                       
-                      <li><strong>Base Rotation and Position: </strong> Captures the initial rotation <code>('baseRotation')</code> and position <code>('basePosition')</code> of the <code>'Shootpoint'</code>, which is likely the point from which bullets are fired.</li>
+                      <li><strong>Base Rotation and Position: </strong> Captures the initial rotation <code>('baseRotation')</code> and position <code>('basePosition')</code> of the <code>'Shootpoint'</code>, which is the point from which bullets are fired.</li>
                       
                       <li><strong>Object Pooling: </strong> Utilizes an object pool <code>('Pool.GetPooledObject')</code> to efficiently retrieve a bullet object from the pool, considering the initial rotation and position.</li>
                       
@@ -143,7 +143,7 @@
                       
                       <li><strong>Land Bobbing Offset: </strong> Utilizes lerping to gradually reduce the <code>'landBobOffset'</code> vector, contributing to a smoother transition between headbobbing states.</li>
                       
-                      <li><strong>Motion Check: </strong> Calls the <code>'CheckMotion'</code> method, likely responsible for managing the overall motion effects.</li>
+                      <li><strong>Motion Check: </strong> Calls the <code>'CheckMotion'</code> method, responsible for managing the overall motion effects.</li>
                     </p>
                 </div>
 
@@ -172,7 +172,7 @@
                       
                       <li><strong>Global Subjects Assignment: </strong> Iterates through an array of enemy health systems <code>('enemyHealth')</code> and adds the instantiated object as a subject to each enemy health system.</li>
                       
-                      <li><strong>Object Return to Pool: </strong> Calls the <code>'ReturnPooledObject'</code> method, likely responsible for returning the instantiated object to the object pool for reuse.</li>
+                      <li><strong>Object Return to Pool: </strong> Calls the <code>'ReturnPooledObject'</code> method, responsible for returning the instantiated object to the object pool for reuse.</li>
                     </p>
                 </div>
 
