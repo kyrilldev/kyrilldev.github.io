@@ -453,11 +453,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-icon {
-  transition: transform 0.3s;
+  transition: color 0.3s;
+
+  transform: rotateZ(180deg);
 }
 
 .open .toggle-icon {
-  transform: rotate(90deg);
+  transition: color 0.3s;
+
+  transform: rotateZ(180deg);
 }
 
 .zoom-in {
