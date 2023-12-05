@@ -453,15 +453,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-icon {
-  transition: color 0.3s;
-
-  transform: rotateZ(180deg);
+  rotate: 0deg;
+  transition: transform 0.3s ease-out;
 }
 
-.open .toggle-icon {
-  transition: color 0.3s;
+.toggle-icon.open{
+  transform: rotate(90deg);
+}
 
-  transform: rotateZ(180deg);
+#parent-div {
+  display: flex;
+}
+
+#first-span{
+  padding-left: 4px;
 }
 
 .zoom-in {
@@ -470,6 +475,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .zoom-in:hover {
   transform: scale(1.05); /* Increase the scale on hover for a slight zoom effect */
+}
+
+.zoom-in2{
+  transition: transform 0.15s ease-in-out
+}
+
+.zoom-in2:hover{
+  transform: scale(1.02);
 }
 
 .responsive-image {
