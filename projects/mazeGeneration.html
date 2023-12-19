@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+        <title>Maze Generation</title>
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords">
+    
+        <!-- Favicons -->
+        <link href="../assets/img/favicon.png" rel="icon">
+        <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+        <!-- Vendor CSS Files -->
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+    
+        <!-- Template Main CSS File -->
+        <link href="../assets/css/style.css" rel="stylesheet">
+    
+        <link href="/assets/css/darkGist.css" rel="stylesheet">
+    
+        <!-- =======================================================
+        * Template Name: Personal - v2.2.0
+        * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+
+        <style>
+
+        </style>
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+
+    <!-- ======= Portfolio Details ======= -->
+      <main id="main">
+        <div id="portfolio-details" class="portfolio-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 portfolio-info">
+                <div class="slight-padding-above"></div>
+                <center><h2>1 Week GameJam 2023</h2></center>
+
+                <div class="slight-padding-above"></div>
+    
+                <div id="embed">
+                  <div class="videowrapper container-fluid">
+                    <iframe src="https://www.youtube.com/embed/vfwHzKd07sM?si=73hGbim-g0v9Pxr1&amp;controls=0&autoplay=1&mute=1&loop=1&playlist=vfwHzKd07sM"
+                      frameborder="0"
+                      allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen width="560" height="315">
+                    </iframe>
+                  </div>
+                </div>
+
+                <div class="slight-padding-above"></div>
+
+                <ul>
+                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git</li>
+                  <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/1-week-game-jam" target="_blank">Link</a></li>
+                  <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/1WeekGameJam2023Portfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
+                </ul>
+                
+                <div class="slight-padding-above"></div>
+              
+                <div class="section-title">
+                  <h2>Code HighLights and Explanations</h2>
+                </div>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                    <div id="parent-div" class="zoom-in2">
+                      <span class="toggle-icon">&#9654;</span>
+                      <span class="toggle-text" id="first-span">Spawn Grid Of Nodes</span>
+                    </div>
+                </button>
+
+                <div id="gist-container-1" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/MazeGeneration/CreateNodes.png" class="responsive-image">
+                    <p>
+                      The <code>'FadeIn'</code> coroutine facilitates a smooth fade-in effect for UI elements using the <code>'CanvasGroup'</code> component. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Time-based Fading: </strong> Utilizes a <code>'while'</code> loop to incrementally adjust the alpha value of the <code>'CanvasGroup'</code> from 1 (fully opaque) to 0 (fully transparent) over a specified <code>'fadeDuration'</code>. This creates a gradual fade-in effect.</li>
+                      
+                      <li><strong>Interpolation for Smoothness: </strong> Implements <code>'Mathf.Lerp'</code> to smoothly interpolate the alpha value based on the elapsed time, providing a visually pleasing transition.</li>
+                      
+                      <li><strong>Coroutine Yielding: </strong> Uses <code>'yield return null'</code> to yield control back to the Unity engine each frame, ensuring that the coroutine doesn't block the main thread.</li>
+                      
+                      <li><strong>Interaction Disabling: </strong> After completing the fade-in, sets <code>'interactable'</code> and <code>'blocksRaycasts'</code> properties of the <code>'CanvasGroup'</code> to false. This prevents interaction with the UI element while it is faded in.</li>
+                    </p>
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Node Neighbor Checking</span>
+                  </div>
+                </button>
+
+                <div id="gist-container-2" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/MazeGeneration/NeighborChecking.png" class="responsive-image">
+                    <p>
+                      The <code>'Choose'</code> method handles the selection of choices within a game scenario. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Dynamic Choice Retrieval: </strong> Utilizes the Unity <code>'EventSystem'</code> to retrieve the currently selected choice from the clicked button. The choice value is obtained from the <code>'Choice'</code> component attached to the clicked game object.</li>
+                      
+                      <li><strong>Dynamic Element Spawning: </strong> Applies a switch statement on <code>'ChoiceIndex'</code> to dynamically spawn an element based on the selected choice. The specific element to spawn is determined by the <code>'choice'</code> value and the current <code>'ChoiceIndex'</code>.</li>
+                      
+                      <li><strong>Array-Based Element Selection: </strong> Depending on the <code>'ChoiceIndex'</code>, selects the appropriate array (<code>'choice1'</code>, <code>'choice2'</code>, etc.) and spawns the chosen element from that array.</li>
+                      
+                      <li><strong>Tracking Final Choices: </strong> Adds the selected choice to a <code>'finalCombo'</code> list, providing a record of the player's choices.</li>
+                      
+                      <li><strong>Incremental Choice Index: </strong> Increments the <code>'ChoiceIndex'</code> to move on to the next set of choices or elements.</li>
+                    </p>
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Removing Node Walls Path Connection</span>
+                  </div>
+                </button>
+
+                <div id="gist-container-3" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/MazeGeneration/RemoveNodeWalls.png" class="responsive-image">
+                    <p>
+                      The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Dynamic Popup Selection: </strong> Retrieves the specified popup element <code>('popupPlaceholder')</code> from an array of popups <code>('popups')</code> based on the provided <code>'index'</code>.</li>
+                      
+                      <li><strong>Popup Position Toggle: </strong> Alternates between two popup positions <code>('popupPos')</code> to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the <code>'popupPos'</code> variable.</li>
+                      
+                      <li><strong>Position Lerping Coroutine: </strong> Initiates a coroutine <code>('PosLerp')</code> to smoothly interpolate the position of the selected popup from its current position to the target position <code>('popupPositions[popupPos].position')</code>. The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.</li>
+                    </p>
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">2D Camera Movement</span>
+                  </div>
+                </button>
+
+                <div id="gist-container-3" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/MazeGeneration/CameraMovement.png" class="responsive-image">
+                    <p>
+                      The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Dynamic Popup Selection: </strong> Retrieves the specified popup element <code>('popupPlaceholder')</code> from an array of popups <code>('popups')</code> based on the provided <code>'index'</code>.</li>
+                      
+                      <li><strong>Popup Position Toggle: </strong> Alternates between two popup positions <code>('popupPos')</code> to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the <code>'popupPos'</code> variable.</li>
+                      
+                      <li><strong>Position Lerping Coroutine: </strong> Initiates a coroutine <code>('PosLerp')</code> to smoothly interpolate the position of the selected popup from its current position to the target position <code>('popupPositions[popupPos].position')</code>. The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.</li>
+                    </p>
+                </div>
+
+                <br>
+
+                <div class="slight-padding-above"></div>
+                
+                <div class="section-title">
+                  <h2>The Assignment</h2>
+                </div>
+
+                <p>
+                  This project me and my group took part of a school wide gamejam. Day one we had to first find a group to work with of course so we the developers and the artists found each other in the cafeteria and started working on the idea for the game. The theme of the gamejam was 'reflection'. So after a bit of thinking we landed on a game where you could make/customize your own mirror by pressing buttons. And at the end of the game you get a self-reflect moment start by the game. But no matter what combination you press, you get called insane.
+                  We sadly didn't win any awards but it was a fun time none the less.
+                </p>
+
+                <div class="slight-padding-above"></div>
+
+                <div class="section-title">
+                  <h2>My part of the project</h2>
+                </div>
+
+                <li>
+                  The Main Menu
+                </li>
+
+                <li>
+                  The Choose functionality
+                </li>
+
+                <li>
+                  The Final Cutscene
+                </li>
+
+                <li>
+                  The backgound level
+                </li>
+
+                <li>
+                  The Game Design
+                </li>
+
+                <div class="slight-padding-above"></div>
+
+                <!-- <a href="" target="_blank">
+                  <iframe src="https://itch.io/embed/2335650" width="552" height="167" frameborder="0"><a href="https://kyrilldev.itch.io/twinstick" >Twinstick by kyrilldev</a></iframe>
+                </a> -->
+              </div>
+    
+            </div>
+    
+          </div>
+        </div><!-- End Portfolio Details -->
+      </main><!-- End #main -->
+    
+     <!-- Vendor JS Files -->
+      <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="assets/vendor/jquery/jquery.min.js"></script>
+      <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="../assets/vendor/php-email-form/validate.js"></script>
+      <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+      <script src="../assets/vendor/counterup/counterup.min.js"></script>
+      <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+      <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="../assets/vendor/venobox/venobox.min.js"></script>
+    
+      <!-- Template Main JS File -->
+      <script src="../assets/js/main.js"></script>
+    
+      <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+
+    </body>
+</html>
