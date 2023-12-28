@@ -67,8 +67,7 @@
 
                 <ul>
                   <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git</li>
-                  <li><strong>Play The Game</strong>: <a href="https://kyrilldev.itch.io/1-week-game-jam" target="_blank">Link</a></li>
-                  <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/1WeekGameJam2023Portfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
+                  <li><strong>Github URL</strong>: <a href="https://github.com/kyrilldev/DTTMaze" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
                 </ul>
                 
                 <div class="slight-padding-above"></div>
@@ -80,23 +79,30 @@
                 <button id="toggle-button" onclick="toggleGist(this)">
                     <div id="parent-div" class="zoom-in2">
                       <span class="toggle-icon">&#9654;</span>
-                      <span class="toggle-text" id="first-span">Spawn Grid Of Nodes</span>
+                      <span class="toggle-text" id="first-span">Camera Movement Controls</span>
                     </div>
                 </button>
 
                 <div id="gist-container-1" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/MazeGeneration/CreateNodes.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/MazeGeneration/zooming.png" class="responsive-image">
                     <p>
-                      The <code>'FadeIn'</code> coroutine facilitates a smooth fade-in effect for UI elements using the <code>'CanvasGroup'</code> component. Key features of this code include:
                       <br>
+                      <strong>Zoom Control</strong>
+                      <li>Utilizes <code>'Input.GetAxis("Mouse ScrollWheel")'</code> to detect mouse scroll wheel movement.</li>
+                      <li>Calls the <code>'Zoom'</code> method, adjusting the camera's zoom level based on the scroll wheel input.</li>
+                      <li>Additionally, implements touch-based zoom control for devices supporting multi-touch gestures.</li>
                       <br>
-                      <li><strong>Time-based Fading: </strong> Utilizes a <code>'while'</code> loop to incrementally adjust the alpha value of the <code>'CanvasGroup'</code> from 1 (fully opaque) to 0 (fully transparent) over a specified <code>'fadeDuration'</code>. This creates a gradual fade-in effect.</li>
-                      
-                      <li><strong>Interpolation for Smoothness: </strong> Implements <code>'Mathf.Lerp'</code> to smoothly interpolate the alpha value based on the elapsed time, providing a visually pleasing transition.</li>
-                      
-                      <li><strong>Coroutine Yielding: </strong> Uses <code>'yield return null'</code> to yield control back to the Unity engine each frame, ensuring that the coroutine doesn't block the main thread.</li>
-                      
-                      <li><strong>Interaction Disabling: </strong> After completing the fade-in, sets <code>'interactable'</code> and <code>'blocksRaycasts'</code> properties of the <code>'CanvasGroup'</code> to false. This prevents interaction with the UI element while it is faded in.</li>
+                      <strong>Touch Input Handling:</strong>
+                      <br>
+                      <li>Detects the first touch by checking <code>Input.GetMouseButtonDown(0)</code> and captures the initial touch position <code>('_touchstart')</code> in world coordinates.</li>
+                      <li> Supports multi-touch gestures using <code>'Input.touchCount == 2'</code>.</li>
+                      <li>Calculates the difference in magnitude between two touches and adjusts the zoom accordingly.</li>
+                      <br>
+                      <strong>Continuous Touch Movement:</strong>
+                      <br>
+                      <li>Allows the user to pan the camera when holding down the mouse button (<code>'Input.GetMouseButton(0)'</code>).</li>
+                      <li>Calculates the movement amount by subtracting the current mouse position from the initial touch position <code>('_touchstart')</code>.</li>
+                      <li>Adjusts the camera's position based on the calculated direction, allowing for continuous movement while holding down the mouse button.</li>
                     </p>
                 </div>
 
@@ -105,25 +111,34 @@
                 <button id="toggle-button" onclick="toggleGist(this)">
                   <div id="parent-div" class="zoom-in2">
                     <span class="toggle-icon">&#9654;</span>
-                    <span class="toggle-text" id="first-span">Node Neighbor Checking</span>
+                    <span class="toggle-text" id="first-span">Tile Management</span>
                   </div>
                 </button>
 
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/MazeGeneration/NeighborChecking.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/MazeGeneration/Tile.png" class="responsive-image">
                     <p>
-                      The <code>'Choose'</code> method handles the selection of choices within a game scenario. Key features of this code include:
+                      <p>This code is responsible for helping manage maze generation. Key features of this code include:</p>
+                      <strong>Remove Wall Function:</strong>
                       <br>
+                      <li>
+                        The <code>'RemoveWall'</code> function plays a crucial role in maze generation. Given a wall index (<code>'wallToRemove'</code>), 
+                        it deactivates the corresponding wall GameObject within the maze. 
+                        This function is essential for creating open paths during maze generation.
+                      </li>
                       <br>
-                      <li><strong>Dynamic Choice Retrieval: </strong> Utilizes the Unity <code>'EventSystem'</code> to retrieve the currently selected choice from the clicked button. The choice value is obtained from the <code>'Choice'</code> component attached to the clicked game object.</li>
-                      
-                      <li><strong>Dynamic Element Spawning: </strong> Applies a switch statement on <code>'ChoiceIndex'</code> to dynamically spawn an element based on the selected choice. The specific element to spawn is determined by the <code>'choice'</code> value and the current <code>'ChoiceIndex'</code>.</li>
-                      
-                      <li><strong>Array-Based Element Selection: </strong> Depending on the <code>'ChoiceIndex'</code>, selects the appropriate array (<code>'choice1'</code>, <code>'choice2'</code>, etc.) and spawns the chosen element from that array.</li>
-                      
-                      <li><strong>Tracking Final Choices: </strong> Adds the selected choice to a <code>'finalCombo'</code> list, providing a record of the player's choices.</li>
-                      
-                      <li><strong>Incremental Choice Index: </strong> Increments the <code>'ChoiceIndex'</code> to move on to the next set of choices or elements.</li>
+                      <strong>Set State Function:</strong>
+                      <br>
+                      <li>
+                        The <code>'SetState'</code> function dynamically adjusts the visual representation of a maze node based 
+                        on its state during a pathfinding algorithm.
+                      </li>
+                      <br>
+                      <strong>Supports different states:</strong>
+                      <br>
+                      <li><strong>Available:</strong> Represents an open node, painted in white.</li>
+                      <li><strong>Current:</strong> Indicates the node the algorithm is currently processing, painted in yellow.</li>
+                      <li><strong>Completed:</strong> Marks nodes that have been visited and processed, painted in blue.</li>
                     </p>
                 </div>
 
@@ -132,44 +147,30 @@
                 <button id="toggle-button" onclick="toggleGist(this)">
                   <div id="parent-div" class="zoom-in2">
                     <span class="toggle-icon">&#9654;</span>
-                    <span class="toggle-text" id="first-span">Removing Node Walls Path Connection</span>
+                    <span class="toggle-text" id="first-span">Maze Generation Algorithm</span>
                   </div>
                 </button>
 
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/MazeGeneration/RemoveNodeWalls.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/MazeGeneration/Algorithm code.png" class="responsive-image">
                     <p>
-                      The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
-                      <br>
-                      <br>
-                      <li><strong>Dynamic Popup Selection: </strong> Retrieves the specified popup element <code>('popupPlaceholder')</code> from an array of popups <code>('popups')</code> based on the provided <code>'index'</code>.</li>
-                      
-                      <li><strong>Popup Position Toggle: </strong> Alternates between two popup positions <code>('popupPos')</code> to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the <code>'popupPos'</code> variable.</li>
-                      
-                      <li><strong>Position Lerping Coroutine: </strong> Initiates a coroutine <code>('PosLerp')</code> to smoothly interpolate the position of the selected popup from its current position to the target position <code>('popupPositions[popupPos].position')</code>. The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.</li>
-                    </p>
-                </div>
+                      <p>The <code>'GenerateMaze'</code> function employs a randomized maze generation algorithm. It starts by initializing a set of nodes and then iteratively explores and connects these nodes until the entire maze is formed.</p>
 
-                <br>
-
-                <button id="toggle-button" onclick="toggleGist(this)">
-                  <div id="parent-div" class="zoom-in2">
-                    <span class="toggle-icon">&#9654;</span>
-                    <span class="toggle-text" id="first-span">2D Camera Movement</span>
-                  </div>
-                </button>
-
-                <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/MazeGeneration/CameraMovement.png" class="responsive-image">
-                    <p>
-                      The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
+                      <strong>Iterative Exploration:</strong>
                       <br>
+                      <li>Iterates until all nodes are visited.</li>
+                      <li>Checks neighbors of the current node and identifies unvisited neighbors.</li>
+                      <li>Randomly selects one of the unvisited neighbors and connects it to the current node by removing the wall between them.</li>
+                      <li>Updates the state/color of the chosen neighbor to indicate it's the new current node.</li>
                       <br>
-                      <li><strong>Dynamic Popup Selection: </strong> Retrieves the specified popup element <code>('popupPlaceholder')</code> from an array of popups <code>('popups')</code> based on the provided <code>'index'</code>.</li>
-                      
-                      <li><strong>Popup Position Toggle: </strong> Alternates between two popup positions <code>('popupPos')</code> to create a visually engaging animation effect. The position toggle is achieved by incrementing or decrementing the <code>'popupPos'</code> variable.</li>
-                      
-                      <li><strong>Position Lerping Coroutine: </strong> Initiates a coroutine <code>('PosLerp')</code> to smoothly interpolate the position of the selected popup from its current position to the target position <code>('popupPositions[popupPos].position')</code>. The lerping occurs over a duration of 1 second, contributing to a visually appealing and gradual popup movement.</li>
+                      <strong>Backtracking:</strong>
+                      <br>
+                      <li>If the current node has no unvisited neighbors, backtracks by marking the current node as completed.</li>
+                      <li>Sets the state/color of the completed node to blue, indicating it has been processed and will not be revisited.</li>
+                      <li>Removes the completed node from the current path.</li>
+                      <br>
+                      <strong>Visual Representation:</strong>
+                      <li>The algorithm dynamically adjusts the color and state of nodes in the maze to provide a visual representation of the maze generation process. Current nodes are shown in yellow, completed nodes in blue, and available nodes in white.</li>
                     </p>
                 </div>
 
@@ -182,35 +183,9 @@
                 </div>
 
                 <p>
-                  This project me and my group took part of a school wide gamejam. Day one we had to first find a group to work with of course so we the developers and the artists found each other in the cafeteria and started working on the idea for the game. The theme of the gamejam was 'reflection'. So after a bit of thinking we landed on a game where you could make/customize your own mirror by pressing buttons. And at the end of the game you get a self-reflect moment start by the game. But no matter what combination you press, you get called insane.
-                  We sadly didn't win any awards but it was a fun time none the less.
+                  This project was a solo project I decided to make in my free time. I got the idea from reddit when browsing the algorithm and computer subreddits. For the generation I used Depth First Search to make the maze. I Implemented this in Unity 2022 and I think this is quite a nice portfolio piece hence why I have made a page for this.
+                  For perfomance reasons I decided to limit the maze to 100 x 100 so that the program would not lag enormously when viewed on less powerfull devices. I implemented the GUI and the Camera Behaviour so that this application could be run on mobile devices as well.
                 </p>
-
-                <div class="slight-padding-above"></div>
-
-                <div class="section-title">
-                  <h2>My part of the project</h2>
-                </div>
-
-                <li>
-                  The Main Menu
-                </li>
-
-                <li>
-                  The Choose functionality
-                </li>
-
-                <li>
-                  The Final Cutscene
-                </li>
-
-                <li>
-                  The backgound level
-                </li>
-
-                <li>
-                  The Game Design
-                </li>
 
                 <div class="slight-padding-above"></div>
 
