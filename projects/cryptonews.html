@@ -45,14 +45,14 @@
             <div class="row">
               <div class="col-lg-12 portfolio-info">
                 <div class="slight-padding-above"></div>
-                <center><h2>Crypto News Aggregator (WIP)</h2></center>
+                <center><h2>Crypto News Aggregator</h2></center>
 
                 <div class="slight-padding-above"></div>
     
                 <div id="embed">
                   <div class="videowrapper container-fluid">
                     <iframe 
-                      src="https://www.youtube.com/embed/U2ZN9Mm6i1U?si=iAVSKnOtIpbKdXF3&amp;controls=0&autoplay=1&mute=1&loop=1&playlist=U2ZN9Mm6i1U"
+                      src="https://www.youtube.com/embed/TRNw9MWRcU8?si=nsmFk9aozNL9_86R&amp;controls=0&autoplay=1&mute=1"
                       frameborder="0"
                       allowfullscreen width="560" height="315">
                     </iframe>
@@ -62,11 +62,112 @@
                 <div class="slight-padding-above"></div>
 
                 <ul>
-                  <li><strong>Tech Stack</strong>: Unity, Visual Studio 2022, GitHub/Git, Maya/Blender</li>
-                  <li><strong>Github URL</strong>: <a href="https://github.com/PortfolioProjectsKyrill/ShortBurnPortfolio" target="_blank">Project Link</a></li> <!-- replace with it's own x2-->
+                  <li><strong>Tech Stack</strong>: React, HTML, CSS, JavaScript, Vercel</li>
+                  <li><strong>Github URL</strong>: <a href="https://github.com/kyrilldev/CryptoNewsAggregator" target="_blank">Project Code Link</a></li> <!-- replace with it's own x2-->
                 </ul>
 
-                <h3>This project is in development, code snippets will we shown when the game is released</h3>
+                <div class="section-title">
+                  <h2>Code HighLights and Explanations</h2>
+                </div>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">App</span>
+                  </div>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-1" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/cryptonews/app.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <br>
+                    <p>1. <strong>Router and Switch:</strong> The component uses the React Router library, including the <code>Router</code> and <code>Switch</code> components. The <code>Switch</code> ensures that only the first matching route is rendered.</p>
+                    
+                    <p>2. <strong>HTML Structure:</strong> The component returns JSX wrapped in a React fragment (<code>&lt;&gt;...&lt;/&gt;</code>). Inside the <code>Switch</code>, there's a main container <code>&lt;div&gt;</code> with the className "superContainer," which holds the entire content of the application.</p>
+                    
+                    <p>3. <strong>Header and Side Content:</strong> The content is divided into three main sections within "superContainer":
+                      - <strong>mobile:</strong> Contains a mobile header component (<code>&lt;MobileHeader /&gt;</code>).
+                      - <strong>superSideContent:</strong> Contains the logo, a desktop header component (<code>&lt;Header /&gt;</code>), and social media icons (<code>&lt;SocialMedia /&gt;</code>).
+                      - <strong>superMainContent:</strong> Contains two carousels (<code>&lt;CoinPriceCarousel /&gt;</code> and another carousel variant <code>&lt;SmallerCarousel /&gt;</code>) and routes for different pages using the <code>&lt;Route /&gt;</code> components.</p>
+                    
+                    <p>4. <strong>Routing:</strong> The <code>&lt;Route /&gt;</code> components are set up with different paths and corresponding components (Homepages, News, and Coins). The <code>exact</code> attribute ensures that the route is matched only when the path is an exact match.</p>
+                    
+                    <p>5. <strong>Footer:</strong> The <code>&lt;Footer /&gt;</code> component is placed outside the <code>Switch</code>, making it a part of the main "superContainer."</p>
+                    
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">CoinPriceCarousel</span>
+                  </div>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-2" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/cryptonews/coinpricecarousel.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <br>
+                    <p>1. <strong>State and Effect Hook:</strong> The component uses the <code>useState</code> hook to manage a state variable <code>coinData</code>, representing cryptocurrency data. The <code>useEffect</code> hook is used to fetch cryptocurrency data when the component mounts.</p>
+                    
+                    <p>2. <strong>Formatting Function:</strong> The <code>formatPrice</code> function is defined to format cryptocurrency prices based on their magnitude.</p>
+                    
+                    <p>3. <strong>Fetching Coin Data:</strong> Inside the <code>useEffect</code>, an asynchronous function <code>fetchData</code> is defined to handle the API request using the Axios library. The fetched data is then set to the <code>coinData</code> state.</p>
+                    
+                    <p>4. <strong>Render Function:</strong> The component returns JSX, creating a carousel of cryptocurrency cards with names and formatted prices.</p>
+                    
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Coins</span>
+                  </div>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-3" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/cryptonews/coins.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <br>
+                    <p>1. <strong>State and Effect Hook:</strong> The component uses the <code>useState</code> hook to manage a state variable <code>cryptoData</code>, representing cryptocurrency data. The <code>useEffect</code> hook is used to fetch cryptocurrency data when the component mounts.</p>
+                    
+                    <p>2. <strong>Fetching Cryptocurrency Data:</strong> Inside the <code>useEffect</code>, an asynchronous function <code>fetchData</code> is defined to handle the API request using the Axios library. The fetched data is then set to the <code>cryptoData</code> state.</p>
+                    
+                    <p>3. <strong>Render Function:</strong> The component returns JSX, creating a table displaying key information about specified cryptocurrencies.</p>
+                    
+                </div>
+
+                <br>
+
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">NewsList</span>
+                  </div>
+                </button>
+
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-4" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/cryptonews/newslist.png" class="responsive-image">
+                    <br>
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>The provided code is a React functional component named <code>Coins</code>. Below is a breakdown of the code:</p>
+
+                    <p>1. <strong>State and Effect Hook:</strong> The component uses the <code>useState</code> hook to manage a state variable <code>cryptoData</code>, representing cryptocurrency data. The <code>useEffect</code> hook is used to fetch cryptocurrency data when the component mounts.</p>
+                    
+                    <p>2. <strong>Fetching Cryptocurrency Data:</strong> Inside the <code>useEffect</code>, an asynchronous function <code>fetchData</code> is defined to handle the API request using the Axios library. The fetched data is then set to the <code>cryptoData</code> state.</p>
+                    
+                    <p>3. <strong>Render Function:</strong> The component returns JSX, creating a table displaying key information about specified cryptocurrencies.</p>
+                    
+                </div>
+
+                <br>
               
                 <div class="slight-padding-above"></div>
                 
@@ -75,7 +176,7 @@
                 </div>
 
                 <p>
-                  This is the final project I have to complete before I start my intership at the end of January.
+                  This project was a free choice part of the course I am following right now (29-1-2024). I chose to make a website using React and I chose to host the website on the quick deploy platform called <a href="https://vercel.app" target="_blank">vercel.app</a>. I started building the website at the start of October 2023 and I finished the project Januari of 2024. I made a Crypto News Aggregator Website which gather information from a bunch of different api's and displays it nicely.
                 </p>
 
                 <div class="slight-padding-above"></div>

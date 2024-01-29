@@ -465,8 +465,17 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
+#parent-div span{
+  font-size: 1.4em;
+}
+
+
 #first-span{
-  padding-left: 4px;
+  padding-left: 13px;
+}
+
+.toggle{
+  font-size: 1em;
 }
 
 .zoom-in {

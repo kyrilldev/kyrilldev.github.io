@@ -45,14 +45,14 @@
             <div class="row">
               <div class="col-lg-12 portfolio-info">
                 <div class="slight-padding-above"></div>
-                <center><h2>Project itch.io (WIP)</h2></center>
+                <center><h2>Project itch.io</h2></center>
 
                 <div class="slight-padding-above"></div>
     
                 <div id="embed">
                   <div class="videowrapper container-fluid">
                     <iframe
-                      src="https://www.youtube.com/embed/RFZV6Jrxt9Y?si=RIvIViqt6y-k4qCu&amp;controls=0&autoplay=1&mute=1&loop=1&playlist=RFZV6Jrxt9Y"
+                      src="https://www.youtube.com/embed/RFZV6Jrxt9Y?si=RIvIViqt6y-k4qCu&amp;controls=0&autoplay=1&mute=1"
                       frameborder="0" allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                       allowfullscreen width="560" height="315">
                     </iframe>
@@ -69,83 +69,95 @@
                 <iframe frameborder="0" src="https://itch.io/embed/2465751?bg_color=222222&amp;fg_color=eeeeee&amp;border_color=363636" width="552" height="167"><a href="https://kyrilldev.itch.io/space-fishing-exploring-game">Space Fishing by kyrilldev</a></iframe>
                 
                 <div class="slight-padding-above"></div>
-
-                <h3>This project is in development, code snippets will we shown when the game is released</h3>
               
                 <div class="section-title">
                   <h2>Code HighLights and Explanations</h2>
                 </div>
 
                 <br>
-                <!-- 
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span>
-                  <span class="toggle-text">Assignwaypointeditortool.cs</span>
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Distance Checking Player Interaction</span>
+                  </div>
                 </button>
 
+                <!-- Container for the embedded Gist -->
+                <div id="gist-container-1" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/itch/distancecheckinginteraction.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
+                    <p>
+                      <p><code>CheckWhichZone()</code> iterates through a list of zones to determine if the player is inside any of them. If a zone contains the player's position, it sets a corresponding flag in an array to true and updates the player's current zone.</p>
+                      
+                      <p><code>CheckIfZoneUnlocked()</code> checks if the current zone where the player is located is unlocked. It examines the flags set in the array during the previous method and verifies if the associated zone is unlocked. If both conditions are met, it returns true; otherwise, it returns false.</p>
+                      
+                    </p>
+                </div>
+
+                <br>
+                <button id="toggle-button" onclick="toggleGist(this)">
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Boat Controlling</span>
+                  </div>
+                </button>
+
+                <!-- Container for the embedded Gist -->
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/Assignwaypointeditortool.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/itch/boatfixedupdate.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
                     <p>
-                      In this snippet, I've crafted a function named <code>('AssignWaypoints')</code> designed for a Unity Cinemachine implementation. <br>
-                      This function dynamically assigns positions to a Cinemachine Smooth Path based on the provided waypoints. 
-                      It also toggles between multiple virtual cameras, enabling the camera associated with the specified level index. <br>
-                      The code not only sets the waypoints for smooth path traversal but also configures the camera to follow and look at a specific target, 
-                      enhancing the cinematic experience within the game. <br>This snippet showcases my ability to manage camera systems and create dynamic, 
-                      immersive experiences in Unity game development.
+                      <p><code>FixedUpdate()</code> is part of a Unity C# script that handles the physics-related logic for controlling a boat or similar object. It calculates the effective speed based on user input and applies it to the object's rigidbody velocity. Fuel consumption is also managed, and the boat can decelerate if no input is detected. It includes checks for user input, boat usability, and invokes separate functions for turning and general movement.</p>
+                      
+                      <p><code>Update()</code> is responsible for updating the fuel UI, refilling fuel on a key press, and invoking a function for landing when the boat is not usable.</p>
+                      
                     </p>
                 </div>
 
                 <br>
-
                 <button id="toggle-button" onclick="toggleGist(this)">
-                  <span class="toggle-icon">&#9654;</span>
-                  <span class="toggle-text">CameraPlayback.cs</span>
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Zone Locking Functionality</span>
+                  </div>
                 </button>
+
+                <!-- Container for the embedded Gist -->
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/CameraPlayback.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/itch/zonelocking.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
                     <p>
-                      In this coroutine, aptly named <code>'PathPosLerp'</code>, I implement smooth interpolation of a Cinemachine Virtual Camera along a tracked dolly path in Unity. 
-                      This function takes parameters such as the virtual camera <code>('vcam')</code>, the duration of the interpolation <code>('sec')</code>, and the level index <code>('l_levelIndex')</code>. <br>
-                      During the interpolation, the camera smoothly moves from the starting position to the end position. 
-                      The code also includes functionality to disable player control during cutscenes by updating a flag in the GameManager.<br>
-                      Finally, the associated virtual camera is disabled upon completion, showcasing my proficiency in creating seamless transitions and enhancing player experiences in Unity game development.
-                    </p>
+                      <p>This code defines a method <code>DistToObjects</code> that takes a list of objects (<code>Interactable</code>) as a parameter and calculates the distances between the current object (with this script) and each object in the provided list.</p>
+
+                      <p>The method calculates distances between the current object and a list of interactable objects, updates their "inRadius" status, triggers events, and removes objects that are beyond a specified radius.</p>
+                      
+                      </p>
                 </div>
 
                 <br>
                 <button id="toggle-button" onclick="toggleGist(this)">
-                    <span class="toggle-icon">&#9654;</span> 
-                    <span class="toggle-text">EditorTool.cs</span>
+                  <div id="parent-div" class="zoom-in2">
+                    <span class="toggle-icon">&#9654;</span>
+                    <span class="toggle-text" id="first-span">Interaction Canvas Key</span>
+                  </div>
                 </button>
 
+                <!-- Container for the embedded Gist -->
                 <div id="gist-container-4" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/theywereleft/EditorTool.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/itch/interactionkey.png" class="responsive-image">
+                    <!-- JavaScript to fetch and embed Gist content will be added here -->
                     <p>
-                      This function, <code>'OnGUI'</code>, defines a custom Unity editor window for convenient configuration of waypoints in the scene. The window provides an intuitive interface for managing waypoints within the game environment. Key features include:
-
-                      <li>
-                        Information Label: Describes the purpose of the window, emphasizing its role in configuring waypoints.
-                      </li>
-                      <br>
-                      <li>
-                        Camera Manager Setup: Allows for the selection of a <code>'CameraManager'</code> object through a field. This manager is then located in the scene for further use.
-                      </li>
-                      <br>
-                      <li>
-                        Waypoint Configuration: Provides toggles for individual cells, allowing quick and visual configuration of different waypoints in the scene.
-                      </li>
-                      <br>
-                      <li>
-                        Spawn Empties Button: Triggers the spawning of entities (empties) based on the configured waypoints. Once spawned, the button sets the level position to zero.
-                      </li>
-                      <br>
-                      <li>
-                        Reset Waypoint Positions Button: Initiates a confirmation dialogue before resetting all waypoint positions. Upon confirmation, it resets the positions of associated GameObjects.
-                      </li>
-                      <br>
-                        This script showcases my ability to create custom Unity editor windows, streamlining the configuration process for waypoints in game development.
+                      <p>This Unity C# code defines a method <code>FollowWorldToCanvas</code> that positions a UI element (<code>UI_Element</code>) 
+                        on a Canvas based on the position of a world object (<code>WorldObject</code>) relative to the camera.</p>
+                      <p>This method ensures that a UI element follows a corresponding world object by 
+                        converting the world position to viewport and then to canvas space, allowing for dynamic 
+                        positioning of UI elements based on their associated world objects.</p>
+                      
                     </p>
-                </div> -->
+                </div>
+
+                <br>
+                <br>
 
                 <div class="slight-padding-above"></div>
                 
@@ -154,7 +166,7 @@
                 </div>
 
                 <p>
-                  This is the second to last project I have to complete before I start my intership at the end of January.
+                  This project started very strangely for me because I got shifted around from group to group four times before I got placed by my final group whom I completed the projec with. The assignment was to make a game in the style of your choosing and my group chose to make a walkthrough game with some fun mechanics. We had a total of 6 weeks for this game minus the 2-3 weeks I got shifted from group to group. The game was completed in the week of 22-01-2024 and me and my whole group got to present the game at the GLU 2024 expo and got to teach a bunch of people how to play the game. Overall one of my better projects.
                 </p>
 
                 <div class="slight-padding-above"></div>
@@ -169,6 +181,66 @@
 
                 <li>
                   Camera Boat functionality
+                </li>
+
+                <li>
+                  Player Interaction
+                </li>
+
+                <li>
+                  Complete Game Loop
+                </li>
+
+                <li>
+                  All placeholder items
+                </li>
+
+                <li>
+                  Main and only bug fixer
+                </li>
+
+                <li>
+                  Comic Players (Start and End of the game)
+                </li>
+
+                <li>
+                  Audio Management and integration
+                </li>
+
+                <li>
+                  Camera Functionality
+                </li>
+
+                <li>
+                  Death Functionality
+                </li>
+
+                <li>
+                  Main Game Designer
+                </li>
+
+                <li>
+                  Group Leader
+                </li>
+
+                <li>
+                  Map functionality
+                </li>
+
+                <li>
+                  Quest Management
+                </li>
+
+                <li>
+                  Respawning System
+                </li>
+
+                <li>
+                  Player out of bounds management
+                </li>
+
+                <li>
+                  WebGL Build
                 </li>
 
                 

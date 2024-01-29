@@ -55,7 +55,7 @@
     
                 <div id="embed">
                   <div class="videowrapper container-fluid">
-                    <iframe src="https://www.youtube.com/embed/rxeXKcWp8IA?si=uDtcbTv3Wr2YrPTJ&amp;controls=0&autoplay=1&mute=1&loop=1&playlist=rxeXKcWp8IA"
+                    <iframe src="https://www.youtube.com/embed/rxeXKcWp8IA?si=uDtcbTv3Wr2YrPTJ&amp;controls=0&autoplay=1&mute=1"
                       frameborder="0"
                       allow="accelerometer; autoplay: 1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowfullscreen width="560" height="315">
@@ -110,7 +110,7 @@
                 </button>
 
                 <div id="gist-container-2" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/2023gamejam/mirrorchoice.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/itch/boatfixedupdate.png" class="responsive-image">
                     <p>
                       The <code>'Choose'</code> method handles the selection of choices within a game scenario. Key features of this code include:
                       <br>
@@ -137,7 +137,7 @@
                 </button>
 
                 <div id="gist-container-3" class="gist-container" style="display: none;">
-                    <img src="/assets/img/codesnippets/2023gamejam/popupanim.png" class="responsive-image">
+                    <img src="/assets/img/codesnippets/itch/distancecheckinginteraction.png" class="responsive-image">
                     <p>
                       The <code>'PopupAnimation'</code> method orchestrates a dynamic animation for pop-up elements using position lerping. Key features of this code include:
                       <br>
@@ -151,6 +151,30 @@
                 </div>
 
                 <br>
+
+                                <button id="toggle-button" onclick="toggleGist(this)">
+                    <div id="parent-div" class="zoom-in2">
+                      <span class="toggle-icon">&#9654;</span>
+                      <span class="toggle-text" id="first-span">Fade In Coroutine for UI Elements</span>
+                    </div>
+                </button>
+
+                <div id="gist-container-1" class="gist-container" style="display: none;">
+                    <img src="/assets/img/codesnippets/itch/zonelocking.png" class="responsive-image">
+                    <p>
+                      The <code>'FadeIn'</code> coroutine facilitates a smooth fade-in effect for UI elements using the <code>'CanvasGroup'</code> component. Key features of this code include:
+                      <br>
+                      <br>
+                      <li><strong>Time-based Fading: </strong> Utilizes a <code>'while'</code> loop to incrementally adjust the alpha value of the <code>'CanvasGroup'</code> from 1 (fully opaque) to 0 (fully transparent) over a specified <code>'fadeDuration'</code>. This creates a gradual fade-in effect.</li>
+                      
+                      <li><strong>Interpolation for Smoothness: </strong> Implements <code>'Mathf.Lerp'</code> to smoothly interpolate the alpha value based on the elapsed time, providing a visually pleasing transition.</li>
+                      
+                      <li><strong>Coroutine Yielding: </strong> Uses <code>'yield return null'</code> to yield control back to the Unity engine each frame, ensuring that the coroutine doesn't block the main thread.</li>
+                      
+                      <li><strong>Interaction Disabling: </strong> After completing the fade-in, sets <code>'interactable'</code> and <code>'blocksRaycasts'</code> properties of the <code>'CanvasGroup'</code> to false. This prevents interaction with the UI element while it is faded in.</li>
+                    </p>
+                </div>
+                
 
                 <div class="slight-padding-above"></div>
                 
